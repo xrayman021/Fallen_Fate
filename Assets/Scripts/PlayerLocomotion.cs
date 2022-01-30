@@ -52,6 +52,8 @@ namespace CH
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = projectedVelocity;
 
+            animatorHandler.UpdtateAnimatorValues(inputHandler.moveAmount, 0);
+
             if(animatorHandler.canRotate)
             {
                 HandleRotation(delta);
