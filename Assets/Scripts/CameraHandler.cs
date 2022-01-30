@@ -12,6 +12,7 @@ namespace CH
         private Transform myTransform;
         private Vector3 cameraTransformPosition;
         private LayerMask ignoreLayers;
+        private Vector3 cameraFollowVelocity = Vector3.zero;
 
         public static CameraHandler singleton;
 
@@ -35,7 +36,7 @@ namespace CH
 
         public void FollowTarget(float delta)
         {
-            Vector3 targetPosition = Vector3.Lerp(myTransform.position, targetTransform.position, delta / followSpeed);
+            Vector3 targetPosition = Vector3.SmoothDamp(myTransform.position, targetTransform.position, ref cameraFollowVelocity, delta / followSpeed);
             myTransform.position = targetPosition;
         }
 
