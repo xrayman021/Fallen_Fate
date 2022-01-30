@@ -21,10 +21,15 @@ namespace CH
         public float pivotSpeed = 0.03f;
 
         private float defaultPosition;
+        private float targetPosition;
         private float lookAngle;
         private float pivotAngle;
         private float minimumPivot = -35;
         private float maximumPivot = 35;
+
+        public float cameraSphereradius = 0.2f;
+        public float cameraCollisionOffset = 0.2f;
+        public float minimumCollisionOffset = 0.2f;
 
         private void Awake()
         {
@@ -38,6 +43,8 @@ namespace CH
         {
             Vector3 targetPosition = Vector3.SmoothDamp(myTransform.position, targetTransform.position, ref cameraFollowVelocity, delta / followSpeed);
             myTransform.position = targetPosition;
+
+            HandleCameraCollisions(delta);
         }
 
         public void HandleCameraRotation(float delta, float mouseXInput, float mouseYInput)
@@ -56,6 +63,29 @@ namespace CH
 
             targetRotation = Quaternion.Euler(rotation);
             cameraPivotTransform.localRotation = targetRotation;
+        }
+
+        private void HandleCameraCollisions(float delta)
+        {
+            targetPosition = defaultPosition;
+            RaycastHit hit;
+            Vector3 direction = cameraTransform.position - cameraPivotTransform.position;
+            direction.Normalize();
+
+            if (Physics.SphereCast(cameraPivotTransform.position, cameraSphereradius, direction, out hit, Mathf.Abs(targetPosition), ignoreLayers))
+            {
+                float dis = Vector3.Distance(cameraPivotTransform.position, hit.point);
+                targetPosition = -(dis - cameraCollisionOffset);
+            }
+
+            if(Mathf.Abs(targetPosition) < minimumCollisionOffset)
+            {
+                targetPosition = -minimumCollisionOffset;
+            }
+
+            cameraTransformPosition.z = Mathf.Lerp(cameraTransform.localPosition.z, targetPosition, delta / 0.2f);
+            cameraTransform.localPosition = cameraTransformPosition;
+
         }
 
     }
