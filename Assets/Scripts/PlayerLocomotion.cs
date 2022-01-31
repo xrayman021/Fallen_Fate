@@ -22,7 +22,11 @@ namespace CH
         [SerializeField]
         float movementSpeed = 5;
         [SerializeField]
+        float sprintSpeed = 7;
+        [SerializeField]
         float rotationSpeed = 10;
+
+        public bool isSprinting;
 
         // Start is called before the first frame update
         void Start()
@@ -40,6 +44,7 @@ namespace CH
         {
             float delta = Time.deltaTime;
 
+            isSprinting = inputHandler.b_Input;
             inputHandler.TickInput(delta);
             HandleMovement(delta);
             HandleRollingAndSprinting(delta);
@@ -73,7 +78,8 @@ namespace CH
 
         public void HandleMovement(float delta)
         {
-            
+            if (inputHandler.rollFlag)
+                return;
 
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horizontal;
@@ -81,12 +87,23 @@ namespace CH
             moveDirection.y = 0;
 
             float speed = movementSpeed;
-            moveDirection *= speed;
+
+            if(inputHandler.sprintFlag)
+            {
+                speed = sprintSpeed;
+                isSprinting = true;
+                moveDirection *= speed;
+            }
+            else
+            {
+                moveDirection *= speed;
+            }
+            
 
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
             rigidbody.velocity = projectedVelocity;
 
-            animatorHandler.UpdtateAnimatorValues(inputHandler.moveAmount, 0);
+            animatorHandler.UpdtateAnimatorValues(inputHandler.moveAmount, 0, isSprinting);
 
             if (animatorHandler.canRotate)
             {
