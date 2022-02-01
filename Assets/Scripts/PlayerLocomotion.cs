@@ -90,6 +90,9 @@ namespace CH
             if (inputHandler.rollFlag)
                 return;
 
+            if (playerManager.isInteracting)
+                return;
+
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horizontal;
             moveDirection.Normalize();
@@ -158,7 +161,7 @@ namespace CH
             if(playerManager.isInAir)
             {
                 rigidbody.AddForce(-Vector3.up * fallingSpeed);
-                rigidbody.AddForce(moveDirection * fallingSpeed / 5f);
+                rigidbody.AddForce(moveDirection * fallingSpeed / 10f);
             }
 
             Vector3 dir = moveDirection;
@@ -181,6 +184,7 @@ namespace CH
                     {
                         Debug.Log("You were in the air for: " + inAirTimer);
                         animatorHandler.PlayTargetAnimation("Land", true);
+                        inAirTimer = 0;
                     }
                     else
                     {
