@@ -12,8 +12,13 @@ namespace CH
 
         public HealthBar healthBar;
 
+        AnimatorHandler animatorHandler;
+
+
+
         void Start()
         {
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
@@ -29,6 +34,7 @@ namespace CH
         {
             currentHealth = currentHealth - damage;
             healthBar.SetCurrentHealth(currentHealth);
+            animatorHandler.PlayTargetAnimation("Damage_01", true);
         }
     }
 }
