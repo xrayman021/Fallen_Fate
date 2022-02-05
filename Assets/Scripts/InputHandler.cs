@@ -13,6 +13,8 @@ namespace CH
         public float mouseY;
 
         public bool b_Input;
+        public bool rb_Input;
+        public bool rt_Input;
         public bool rollFlag;
         public bool sprintFlag;
         public float rollInputTimer;
@@ -20,13 +22,19 @@ namespace CH
         
 
         PlayerControls inputActions;
+        PlayerAttacker playerAttacker;
+        PlayerInventory playerInventory;
         CameraHandler cameraHandler;
 
         Vector2 movementInput;
         Vector2 cameraInput;
 
-        
-        
+        public void Start()
+        {
+            playerAttacker = GetComponent<PlayerAttacker>();
+            playerInventory = GetComponent<PlayerInventory>();
+        }
+
 
         public void OnEnable()
         {
@@ -48,6 +56,7 @@ namespace CH
         {
             MoveInput(delta);
             HandleRollInput(delta);
+            HandleAttackInput(delta);
         }
 
         private void MoveInput(float delta)
@@ -79,9 +88,21 @@ namespace CH
             }
         }
 
-        private void AttackInput(float delta)
+        private void HandleAttackInput(float delta)
         {
+            inputActions.PlayerActions.RB.performed += i => rb_Input = true;
+            inputActions.PlayerActions.RT.performed += i => rt_Input = true;
 
+            //RB handles the right hand weapon's light attacks
+            if(rb_Input)
+            {
+                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+            }
+
+            if(rt_Input)
+            {
+                playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            }
         }
 
     }
