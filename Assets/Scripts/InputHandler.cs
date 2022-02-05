@@ -79,5 +79,10 @@ namespace CH
             }
         }
 
+        private void AttackInput(float delta)
+        {
+
+        }
+
     }
 }

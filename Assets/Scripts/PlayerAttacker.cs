@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttacker : MonoBehaviour
+namespace CH
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerAttacker : MonoBehaviour
     {
-        
-    }
+        AnimatorHandler animatorHandler;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        }
+        public void HandleLightAttack(WeaponItem weapon)
+        {
+            animatorHandler.PlayTargetAnimation(weapon.OH_Light_Attack_1, true);
+        }
+
+        public void HandleHeavyAttack(WeaponItem weapon)
+        {
+            animatorHandler.PlayTargetAnimation(weapon.OH_Heavy_Attack_1, true);
+        }
     }
 }
