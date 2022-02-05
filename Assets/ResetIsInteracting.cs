@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResetIsInteracting : StateMachineBehaviour
+public class ResetAnimatorBool : StateMachineBehaviour
 {
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
