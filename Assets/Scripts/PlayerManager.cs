@@ -60,7 +60,7 @@ namespace CH
         {
             inputHandler.rollFlag = false;
             inputHandler.sprintFlag = false;
-            isSprinting = inputHandler.b_Input;
+            //isSprinting = inputHandler.b_Input;
 
             if(isInAir)
             {

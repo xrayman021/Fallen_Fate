@@ -100,7 +100,7 @@ namespace CH
 
             float speed = movementSpeed;
 
-            if(inputHandler.sprintFlag)
+            if(inputHandler.sprintFlag && inputHandler.moveAmount > 0.5)
             {
                 speed = sprintSpeed;
                 playerManager.isSprinting = true;
@@ -108,7 +108,16 @@ namespace CH
             }
             else
             {
-                moveDirection *= speed;
+                if(inputHandler.moveAmount < 0.5)
+                {
+                    moveDirection *= movementSpeed;
+                    playerManager.isSprinting = false;
+                }
+                else
+                {
+                    moveDirection *= speed;
+                    playerManager.isSprinting = false;
+                }
             }
             
 
