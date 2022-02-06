@@ -107,6 +107,10 @@ namespace CH
                 }
                 else
                 {
+                    if (playerManager.isInteracting)
+                        return;
+                    if (playerManager.canDoCombo)
+                        return;
                     playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
                 }
                 
