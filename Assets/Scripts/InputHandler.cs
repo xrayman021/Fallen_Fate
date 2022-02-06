@@ -17,6 +17,7 @@ namespace CH
         public bool rt_Input;
         public bool rollFlag;
         public bool sprintFlag;
+        public bool comboFlag;
         public float rollInputTimer;
 
         
@@ -24,6 +25,7 @@ namespace CH
         PlayerControls inputActions;
         PlayerAttacker playerAttacker;
         PlayerInventory playerInventory;
+        PlayerManager playerManager;
         CameraHandler cameraHandler;
 
         Vector2 movementInput;
@@ -33,6 +35,7 @@ namespace CH
         {
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
+            playerManager = GetComponent<PlayerManager>();
         }
 
 
@@ -96,7 +99,17 @@ namespace CH
             //RB handles the right hand weapon's light attacks
             if(rb_Input)
             {
-                playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                if(playerManager.canDoCombo)
+                {
+                    comboFlag = true;
+                    playerAttacker.HandleWeaponCombo(playerInventory.rightWeapon);
+                    comboFlag = false;
+                }
+                else
+                {
+                    playerAttacker.HandleLightAttack(playerInventory.rightWeapon);
+                }
+                
             }
 
             if(rt_Input)
