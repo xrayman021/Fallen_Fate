@@ -6,13 +6,13 @@ namespace CH
 {
     public class DamageCollider : MonoBehaviour
     {
-        Collider damageCollider;
+        BoxCollider damageCollider;
 
         public int currentWeaponDamage = 25;
 
         private void Start()
         {
-            damageCollider = GetComponent<Collider>();
+            damageCollider = GetComponent<BoxCollider>();
             damageCollider.gameObject.SetActive(true);
             damageCollider.isTrigger = true;
             damageCollider.enabled = false;

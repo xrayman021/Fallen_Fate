@@ -10,7 +10,7 @@ namespace CH
         public int maxHealth;
         public int currentHealth;
 
-        public HealthBar healthBar;
+        //public HealthBar healthBar;
 
         Animator animator;
 
@@ -21,7 +21,7 @@ namespace CH
             animator = GetComponentInChildren<Animator>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
-            healthBar.SetMaxHealth(maxHealth);
+            //healthBar.SetMaxHealth(maxHealth);
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -33,7 +33,8 @@ namespace CH
         public void TakeDamage(int damage)
         {
             currentHealth = currentHealth - damage;
-            healthBar.SetCurrentHealth(currentHealth);
+            Debug.Log("Enemy was hit");
+            //healthBar.SetCurrentHealth(currentHealth);
             animator.Play("Damage_01");
 
             if (currentHealth <= 0)
