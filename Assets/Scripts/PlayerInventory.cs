@@ -16,8 +16,8 @@ namespace CH
         public WeaponItem[] weaponsInRightHandSlots = new WeaponItem[1];
         public WeaponItem[] weaponsInLeftHandSlots = new WeaponItem[1];
 
-        public int currentRightWeaponIndex = 0;
-        public int currentLeftWeaponIndex = 0;
+        public int currentRightWeaponIndex = -1;
+        public int currentLeftWeaponIndex = -1;
 
 
         private void Awake()
@@ -69,7 +69,7 @@ namespace CH
             if (currentLeftWeaponIndex == 0 && weaponsInLeftHandSlots[0] != null)
             {
                 leftWeapon = weaponsInLeftHandSlots[currentLeftWeaponIndex];
-                weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[currentLeftWeaponIndex], false);
+                weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[currentLeftWeaponIndex], true);
             }
             else if (currentLeftWeaponIndex == 0 && weaponsInLeftHandSlots[0] == null)
             {
@@ -78,7 +78,7 @@ namespace CH
             else if (currentLeftWeaponIndex == 1 && weaponsInLeftHandSlots[1] != null)
             {
                 leftWeapon = weaponsInLeftHandSlots[currentLeftWeaponIndex];
-                weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[currentLeftWeaponIndex], false);
+                weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[currentLeftWeaponIndex], true);
             }
             else
             {
@@ -89,7 +89,7 @@ namespace CH
             {
                 currentLeftWeaponIndex = -1;
                 leftWeapon = unarmedWeapon;
-                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, true);
             }
         }
     }
