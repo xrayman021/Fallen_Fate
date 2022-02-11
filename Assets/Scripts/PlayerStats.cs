@@ -10,7 +10,7 @@ namespace CH
         public int maxHealth;
         public int currentHealth;
 
-        public int staminaLevel;
+        public int staminaLevel = 10;
         public int maxStamina;
         public int currentStamina;
 
