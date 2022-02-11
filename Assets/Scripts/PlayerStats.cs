@@ -58,5 +58,11 @@ namespace CH
                 //Handle player death
             }
         }
+
+        public void TakeStaminaDamage(int damage)
+        {
+            currentStamina = currentStamina - damage;
+            staminaBar.SetCurrentStamina(currentStamina);
+        }
     }
 }

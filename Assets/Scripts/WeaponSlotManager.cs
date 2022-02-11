@@ -12,6 +12,8 @@ namespace CH
         DamageCollider leftHandDamageCollider;
         DamageCollider rightHandDamageCollider;
 
+        public WeaponItem attackingWeapon;
+
         Animator animator;
 
         QuickSlotsUI quickSlotsUI;
@@ -108,11 +110,17 @@ namespace CH
 
         #endregion
 
+        #region Handle Weapon's Stamina Drainage
         public void DrainStaminaLightAttack()
         {
-
+            playerStats.TakeStaminaDamage(Mathf.RoundToInt(attackingWeapon.baseStamina * attackingWeapon.lightAttackMultiplier));
         }
 
+        public void DrainStaminaHeavyAttack()
+        {
+            playerStats.TakeStaminaDamage(Mathf.RoundToInt(attackingWeapon.baseStamina * attackingWeapon.heavyAttackMultiplier));
+        }
+        #endregion
 
     }
 
