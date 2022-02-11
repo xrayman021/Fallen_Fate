@@ -27,10 +27,8 @@ namespace CH
 
         private void Start()
         {
-            rightWeapon = weaponsInRightHandSlots[currentRightWeaponIndex];
-            leftWeapon = weaponsInLeftHandSlots[currentLeftWeaponIndex];
-            weaponSlotManager.LoadWeaponOnSlot(rightWeapon, false);
-            weaponSlotManager.LoadWeaponOnSlot(leftWeapon, true);
+            rightWeapon = unarmedWeapon;
+            leftWeapon = unarmedWeapon;
         }
 
         public void ChangeRightWeapon()
@@ -60,6 +58,37 @@ namespace CH
             {
                 currentRightWeaponIndex = -1;
                 rightWeapon = unarmedWeapon;
+                weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
+            }
+        }
+
+        public void ChangeLeftWeapon()
+        {
+            currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
+
+            if (currentLeftWeaponIndex == 0 && weaponsInLeftHandSlots[0] != null)
+            {
+                leftWeapon = weaponsInLeftHandSlots[currentLeftWeaponIndex];
+                weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[currentLeftWeaponIndex], false);
+            }
+            else if (currentLeftWeaponIndex == 0 && weaponsInLeftHandSlots[0] == null)
+            {
+                currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
+            }
+            else if (currentLeftWeaponIndex == 1 && weaponsInLeftHandSlots[1] != null)
+            {
+                leftWeapon = weaponsInLeftHandSlots[currentLeftWeaponIndex];
+                weaponSlotManager.LoadWeaponOnSlot(weaponsInLeftHandSlots[currentLeftWeaponIndex], false);
+            }
+            else
+            {
+                currentLeftWeaponIndex = currentLeftWeaponIndex + 1;
+            }
+
+            if (currentLeftWeaponIndex > weaponsInLeftHandSlots.Length - 1)
+            {
+                currentLeftWeaponIndex = -1;
+                leftWeapon = unarmedWeapon;
                 weaponSlotManager.LoadWeaponOnSlot(unarmedWeapon, false);
             }
         }
