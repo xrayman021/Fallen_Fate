@@ -36,7 +36,7 @@ namespace CH
                 else
                 {
                     leftWeaponIcon.sprite = null;
-                    rightWeaponIcon.enabled = false;
+                    leftWeaponIcon.enabled = false;
                 }
                 
             }
