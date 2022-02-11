@@ -10,7 +10,12 @@ namespace CH
         public int maxHealth;
         public int currentHealth;
 
+        public int staminaLevel;
+        public int maxStamina;
+        public int currentStamina;
+
         public HealthBar healthBar;
+        public StaminaBar staminaBar;
 
         AnimatorHandler animatorHandler;
 
@@ -22,12 +27,22 @@ namespace CH
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
+
+            maxStamina = SetMaxStaminaFromStaminaLevel();
+            currentStamina = maxStamina;
+            staminaBar.SetMaxStamina(maxStamina);
         }
 
         private int SetMaxHealthFromHealthLevel()
         {
             maxHealth = healthLevel * 10;
             return maxHealth;
+        }
+
+        private int SetMaxStaminaFromStaminaLevel()
+        {
+            maxStamina = staminaLevel * 10;
+            return maxStamina;
         }
 
         public void TakeDamage(int damage)

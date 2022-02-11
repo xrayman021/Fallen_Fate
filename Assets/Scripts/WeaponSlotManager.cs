@@ -16,10 +16,13 @@ namespace CH
 
         QuickSlotsUI quickSlotsUI;
 
+        PlayerStats playerStats;
+
         private void Awake()
         {
             animator = GetComponent<Animator>();
             quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
+            playerStats = GetComponentInParent<PlayerStats>();
 
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -104,6 +107,11 @@ namespace CH
         }
 
         #endregion
+
+        public void DrainStaminaLightAttack()
+        {
+
+        }
 
 
     }
