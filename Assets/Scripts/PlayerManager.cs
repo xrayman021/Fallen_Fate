@@ -44,6 +44,7 @@ namespace CH
             playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+            CheckForInteractableObject();
         }
 
         private void FixedUpdate()
@@ -67,12 +68,35 @@ namespace CH
             inputHandler.d_Pad_Down = false;
             inputHandler.d_Pad_Left = false;
             inputHandler.d_Pad_Right = false;
+            inputHandler.a_Input = false;
 
             if(isInAir)
             {
                 playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
             }
 
+        }
+        public void CheckForInteractableObject()
+        {
+            RaycastHit hit;
+            if(Physics.SphereCast(transform.position, 0.3f, transform.forward, out hit, 1f))
+            {
+                if(hit.collider.tag == "Interactable")
+                {
+                    Interactable interactableObject = hit.collider.GetComponent<Interactable>();
+                    if(interactableObject != null)
+                    {
+                        string interactabletext = interactableObject.interactibleText;
+                        //Set UI text to the interactable ibject's text.
+                        //Enable UI popup.
+
+                        if(inputHandler.a_Input)
+                        {
+                            hit.collider.GetComponent<Interactable>().Interact(this);
+                        }
+                    }
+                }
+            }
         }
     }
 }

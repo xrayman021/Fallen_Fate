@@ -216,6 +216,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "A",
+                    "type": "Button",
+                    "id": "67d097fd-bdf4-450b-8458-53423bef1ec0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -370,6 +378,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "D-Pad Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2acb684c-3b73-48b2-965f-40af3bae2cab",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "A",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a64c470-6890-40b6-b72c-ffa8ba1a5a08",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "A",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

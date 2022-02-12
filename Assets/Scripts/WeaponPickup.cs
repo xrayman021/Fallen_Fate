@@ -13,7 +13,7 @@ namespace CH
             base.Interact(playerManager);
 
             //Pick up item and add to inventory.
-
+            PickUpItem(playerManager);
         }
 
         private void PickUpItem(PlayerManager playerManager)
@@ -28,6 +28,7 @@ namespace CH
             playerLocomotion.rigidbody.velocity = Vector3.zero; //Stop while picking up object.
             animatorHandler.PlayTargetAnimation("Pick Up Item", true); //Plays looting animation.
             playerInventory.weaponsInventory.Add(weapon);
+            Destroy(gameObject);
         }
     }
 }

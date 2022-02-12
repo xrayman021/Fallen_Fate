@@ -13,6 +13,7 @@ namespace CH
         public float mouseY;
 
         public bool b_Input;
+        public bool a_Input;
         public bool rb_Input;
         public bool rt_Input;
         public bool d_Pad_Up;
@@ -66,6 +67,7 @@ namespace CH
             HandleRollInput(delta);
             HandleAttackInput(delta);
             HandleQuickSlotsInput();
+            HandleInteractableInput();
         }
 
         private void MoveInput(float delta)
@@ -140,6 +142,11 @@ namespace CH
             {
                 playerInventory.ChangeLeftWeapon();
             }
+        }
+
+        private void HandleInteractableInput()
+        {
+            inputActions.PlayerActions.A.performed += i => a_Input = true;
         }
 
     }
