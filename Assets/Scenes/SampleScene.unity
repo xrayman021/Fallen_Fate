@@ -538,6 +538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 681334866}
+  - component: {fileID: 681334867}
   m_Layer: 5
   m_Name: Ineract Alert
   m_TagString: Untagged
@@ -565,6 +566,19 @@ RectTransform:
   m_AnchoredPosition: {x: 19, y: -141.82927}
   m_SizeDelta: {x: 383, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &681334867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681334865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1a6f512228d9ce45ae2c6fca732bda9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableText: {fileID: 1457333295}
 --- !u!1001 &692802679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -762,6 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60dc7450e7e92a4d8e5244468679cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactableUIGameObject: {fileID: 681334865}
   isInteracting: 0
   isSprinting: 0
   isInAir: 0
@@ -2844,7 +2859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6941193908165749842, guid: 8754a384f67602e468086911c6a2f14d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36
+      value: 0.669
       objectReference: {fileID: 0}
     - target: {fileID: 6941193908165749842, guid: 8754a384f67602e468086911c6a2f14d, type: 3}
       propertyPath: m_LocalPosition.z

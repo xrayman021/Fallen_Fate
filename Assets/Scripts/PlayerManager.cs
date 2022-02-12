@@ -10,6 +10,8 @@ namespace CH
         Animator anim;
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
+        public GameObject interactableUIGameObject;
+        InteractableUI interactableUI;
 
         public bool isInteracting;
 
@@ -31,6 +33,7 @@ namespace CH
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
+            interactableUI = FindObjectOfType<InteractableUI>();
         }
 
         
@@ -87,14 +90,21 @@ namespace CH
                     if(interactableObject != null)
                     {
                         string interactabletext = interactableObject.interactibleText;
-                        //Set UI text to the interactable ibject's text.
-                        //Enable UI popup.
+                        interactableUI.interactableText.text = interactabletext;
+                        interactableUIGameObject.SetActive(true);
 
                         if(inputHandler.a_Input)
                         {
                             hit.collider.GetComponent<Interactable>().Interact(this);
                         }
                     }
+                }
+            }
+            else
+            {
+                if(interactableUIGameObject != null)
+                {
+                    interactableUIGameObject.SetActive(false);
                 }
             }
         }
