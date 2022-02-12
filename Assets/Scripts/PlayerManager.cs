@@ -11,6 +11,7 @@ namespace CH
         CameraHandler cameraHandler;
         PlayerLocomotion playerLocomotion;
         public GameObject interactableUIGameObject;
+        public GameObject itemInteractableGameObject;
         InteractableUI interactableUI;
 
         public bool isInteracting;
@@ -105,6 +106,10 @@ namespace CH
                 if(interactableUIGameObject != null)
                 {
                     interactableUIGameObject.SetActive(false);
+                }
+                if(itemInteractableGameObject != null && inputHandler.a_Input)
+                {
+                    itemInteractableGameObject.SetActive(false);
                 }
             }
         }
