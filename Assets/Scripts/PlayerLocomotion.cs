@@ -10,6 +10,8 @@ namespace CH
         Transform cameraObject;
         InputHandler inputHandler;
         public Vector3 moveDirection;
+        public float jumpForce = 250f;
+        public bool jumpForceApplied;
 
         [HideInInspector]
         public Transform myTransform;
@@ -251,8 +253,25 @@ namespace CH
                     moveDirection.y = 0;
                     Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = jumpRotation;
+                    jumpForceApplied = true;
                 }
             }
+        }
+
+        private void FixedUpdate()
+        {
+            if (jumpForceApplied)
+            {
+                StartCoroutine(JumpCo());
+                rigidbody.AddForce(transform.up * jumpForce);
+
+            }
+        }
+
+        private IEnumerator JumpCo()
+        {
+            yield return new WaitForSeconds(0.35f);
+            jumpForceApplied = false;
         }
 
         #endregion
