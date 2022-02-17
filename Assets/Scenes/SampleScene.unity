@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &87232568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableText: {fileID: 1457333295}
   itemText: {fileID: 1966861620}
-  itemImage: {fileID: 170339675}
+  itemImage: {fileID: 0}
 --- !u!1001 &692802679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2890,7 +2890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2138733050
 RectTransform:
   m_ObjectHideFlags: 0

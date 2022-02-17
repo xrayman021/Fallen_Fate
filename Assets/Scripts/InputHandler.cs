@@ -16,6 +16,7 @@ namespace CH
         public bool a_Input;
         public bool rb_Input;
         public bool rt_Input;
+        public bool jump_Input;
         public bool d_Pad_Up;
         public bool d_Pad_Down;
         public bool d_Pad_Left;
@@ -68,6 +69,7 @@ namespace CH
             HandleAttackInput(delta);
             HandleQuickSlotsInput();
             HandleInteractableInput();
+            HandleJumpInput();
         }
 
         private void MoveInput(float delta)
@@ -147,6 +149,11 @@ namespace CH
         private void HandleInteractableInput()
         {
             inputActions.PlayerActions.A.performed += i => a_Input = true;
+        }
+
+        private void HandleJumpInput()
+        {
+            inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
         }
 
     }
