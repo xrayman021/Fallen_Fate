@@ -824,14 +824,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694136050}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 3.4206867, y: 0.015, z: -1.1047611}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 692802680}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!136 &694136052
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -875,6 +875,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: {x: 0, y: 0, z: 0}
+  jumpForce: 250
+  jumpForceApplied: 0
   myTransform: {fileID: 0}
   animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
@@ -2766,7 +2768,7 @@ Transform:
   m_GameObject: {fileID: 2040443076}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.934879, y: 1, z: 6.672037}
+  m_LocalScale: {x: 1.9457353, y: 1, z: 5.496024}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
