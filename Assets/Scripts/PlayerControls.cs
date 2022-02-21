@@ -175,6 +175,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""id"": ""8f241f5f-66ac-4e10-9233-a8c317f0f2e7"",
             ""actions"": [
                 {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""5483f1af-3544-43e8-a0ec-9ce6d63a46b3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""Roll"",
                     ""type"": ""Button"",
                     ""id"": ""f99135d8-c4b6-4132-8ac2-40126e79e7a2"",
@@ -434,6 +442,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""520100ff-47d1-429b-9f72-b23c91fbbb48"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15027e17-383e-4624-96c9-ac82152b0d2b"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventory"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -446,6 +476,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerMovement_Camera = m_PlayerMovement.FindAction("Camera", throwIfNotFound: true);
         // Player Actions
         m_PlayerActions = asset.FindActionMap("Player Actions", throwIfNotFound: true);
+        m_PlayerActions_Inventory = m_PlayerActions.FindAction("Inventory", throwIfNotFound: true);
         m_PlayerActions_Roll = m_PlayerActions.FindAction("Roll", throwIfNotFound: true);
         m_PlayerActions_RB = m_PlayerActions.FindAction("RB", throwIfNotFound: true);
         m_PlayerActions_RT = m_PlayerActions.FindAction("RT", throwIfNotFound: true);
@@ -545,6 +576,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     // Player Actions
     private readonly InputActionMap m_PlayerActions;
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
+    private readonly InputAction m_PlayerActions_Inventory;
     private readonly InputAction m_PlayerActions_Roll;
     private readonly InputAction m_PlayerActions_RB;
     private readonly InputAction m_PlayerActions_RT;
@@ -558,6 +590,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Inventory => m_Wrapper.m_PlayerActions_Inventory;
         public InputAction @Roll => m_Wrapper.m_PlayerActions_Roll;
         public InputAction @RB => m_Wrapper.m_PlayerActions_RB;
         public InputAction @RT => m_Wrapper.m_PlayerActions_RT;
@@ -576,6 +609,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_PlayerActionsActionsCallbackInterface != null)
             {
+                @Inventory.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnInventory;
                 @Roll.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRoll;
                 @Roll.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRoll;
                 @Roll.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRoll;
@@ -607,6 +643,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
             {
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
                 @Roll.started += instance.OnRoll;
                 @Roll.performed += instance.OnRoll;
                 @Roll.canceled += instance.OnRoll;
@@ -645,6 +684,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     }
     public interface IPlayerActionsActions
     {
+        void OnInventory(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);
         void OnRB(InputAction.CallbackContext context);
         void OnRT(InputAction.CallbackContext context);
