@@ -7,7 +7,7 @@ namespace CH
 {
     public class WeaponInventorySlot : MonoBehaviour
     {
-        Image icon;
+        public Image icon;
         WeaponItem item;
 
         public void AddItem(WeaponItem newItem)

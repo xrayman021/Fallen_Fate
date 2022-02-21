@@ -11623,6 +11623,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313258789}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &313624789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2538587411004395565, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+  m_PrefabInstance: {fileID: 2052230514486516891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &319586919
 GameObject:
   m_ObjectHideFlags: 0
@@ -23793,6 +23798,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674477399}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &676078272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1077792413857475659, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+  m_PrefabInstance: {fileID: 2052230514486516891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &676253923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56601,6 +56611,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652207268}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1653648085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2316220535866251580, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+  m_PrefabInstance: {fileID: 2316220535443977669}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad92f00a52fb484480dc915ee3cf3cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1654577992
 GameObject:
   m_ObjectHideFlags: 0
@@ -57931,6 +57952,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689270021}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1689498297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2052230516037135906, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+  m_PrefabInstance: {fileID: 2052230514486516891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1691098516
 GameObject:
   m_ObjectHideFlags: 0
@@ -66792,6 +66818,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934429977}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1935590802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3663219601823949266, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+  m_PrefabInstance: {fileID: 2052230514486516891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1942604577
 GameObject:
   m_ObjectHideFlags: 0
@@ -68642,6 +68679,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984101971}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!224 &1990423335 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6010168767266037480, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+  m_PrefabInstance: {fileID: 2052230514486516891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1995965353
 GameObject:
   m_ObjectHideFlags: 0
@@ -73273,6 +73315,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 447796904505740830, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: hudWindow
+      value: 
+      objectReference: {fileID: 1689498297}
+    - target: {fileID: 447796904505740830, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: playerInventory
+      value: 
+      objectReference: {fileID: 1653648085}
+    - target: {fileID: 447796904505740830, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: weaponInventoryWindow
+      value: 
+      objectReference: {fileID: 313624789}
+    - target: {fileID: 447796904505740830, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: weaponInventorySlotPrefab
+      value: 
+      objectReference: {fileID: 676078272}
+    - target: {fileID: 447796904505740830, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: weaponInventorySlotsParent
+      value: 
+      objectReference: {fileID: 1990423335}
+    - target: {fileID: 1195375989967211505, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: icon
+      value: 
+      objectReference: {fileID: 1935590802}
     - target: {fileID: 1660568560581891190, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -73397,6 +73463,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player UI
       objectReference: {fileID: 0}
+    - target: {fileID: 2052230516037135906, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_Name
+      value: HUD Window
+      objectReference: {fileID: 0}
+    - target: {fileID: 2538587411004395565, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_Name
+      value: Weapon Inventory Window
+      objectReference: {fileID: 0}
     - target: {fileID: 5628347988360957181, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -73410,6 +73484,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5628347988360957181, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713571504807285888, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713571504807285888, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713571504807285888, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713571504807285888, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
