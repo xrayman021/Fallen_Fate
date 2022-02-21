@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class WeaponInventorySlot : MonoBehaviour
+namespace CH
 {
-    // Start is called before the first frame update
-    void Start()
+    public class WeaponInventorySlot : MonoBehaviour
     {
-        
-    }
+        Image icon;
+        WeaponItem item;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void AddItem(WeaponItem newItem)
+        {
+            item = newItem;
+            icon.sprite = item.itemIcon;
+            icon.enabled = true;
+            gameObject.SetActive(true);
+        }
+
+        public void ClearInventorySlot()
+        {
+            item = null;
+            icon.sprite = null;
+            icon.enabled = false;
+            gameObject.SetActive(false);
+        }
+
+
     }
 }
