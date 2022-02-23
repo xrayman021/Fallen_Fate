@@ -31,6 +31,10 @@ namespace CH
         public float cameraCollisionOffset = 0.2f;
         public float minimumCollisionOffset = 0.2f;
 
+        List<CharacterManager> availableTargets = new List<CharacterManager>();
+        public Transform nearestLockOnTarget;
+        public float maximumLockOnDistance = 30f;
+
         private void Awake()
         {
             singleton = this;
@@ -87,6 +91,41 @@ namespace CH
             cameraTransformPosition.z = Mathf.Lerp(cameraTransform.localPosition.z, targetPosition, delta / 0.2f);
             cameraTransform.localPosition = cameraTransformPosition;
 
+        }
+
+        public void HandleLockOn()
+        {
+            float shortestDistance = Mathf.Infinity;
+
+            Collider[] colliders = Physics.OverlapSphere(targetTransform.position, 26);
+
+            for (int i = 0; i < colliders.Length; i++)
+            {
+                CharacterManager character = colliders[i].GetComponent<CharacterManager>();
+
+                if(character != null)
+                {
+                    Vector3 lockTargetDirection = character.transform.position - targetTransform.position;
+                    float distanceFromTarget = Vector3.Distance(targetTransform.position, character.transform.position);
+                    float viewableAngle = Vector3.Angle(lockTargetDirection, cameraTransform.forward);
+
+                    if(character.transform.root != targetTransform.transform.root && viewableAngle > -50 && viewableAngle < 50 && distanceFromTarget <= maximumLockOnDistance)
+                    {
+                        availableTargets.Add(character);
+                    }
+                }
+            }
+
+            for (int k = 0; k < availableTargets.Count; k++)
+            {
+                float distanceFromTarget = Vector3.Distance(targetTransform.position, availableTargets[k].transform.position);
+
+                if(distanceFromTarget < shortestDistance)
+                {
+                    shortestDistance = distanceFromTarget;
+                    nearestLockOnTarget = availableTargets[k].lockOnTransform;
+                }
+            }
         }
 
     }

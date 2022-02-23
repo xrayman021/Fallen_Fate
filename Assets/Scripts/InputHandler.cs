@@ -22,10 +22,12 @@ namespace CH
         public bool d_Pad_Left;
         public bool d_Pad_Right;
         public bool inventory_Input;
+        public bool lockOnInput;
 
         public bool rollFlag;
         public bool sprintFlag;
         public bool comboFlag;
+        public bool lockOnFlag;
         public bool inventoryFlag;
         public float rollInputTimer;
 
