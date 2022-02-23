@@ -44,11 +44,8 @@ namespace CH
             isInteracting = anim.GetBool("isInteracting");
             canDoCombo = anim.GetBool("canDoCombo");
             anim.SetBool("isInAir", isInAir);
-            
             inputHandler.TickInput(delta);
-            playerLocomotion.HandleMovement(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
-            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
             playerLocomotion.HandleJumping();
             CheckForInteractableObject();
         }
@@ -56,18 +53,15 @@ namespace CH
         private void FixedUpdate()
         {
             float delta = Time.fixedDeltaTime;
-
-            if (cameraHandler != null)
-            {
-                cameraHandler.FollowTarget(delta);
-                cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
-            }
+            playerLocomotion.HandleMovement(delta);
+            //playerLocomotion.HandleRollingAndSprinting(delta);
+            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+            //playerLocomotion.HandleJumping();
         }
 
         private void LateUpdate()
         {
             inputHandler.rollFlag = false;
-            inputHandler.sprintFlag = false;
             inputHandler.rb_Input = false;
             inputHandler.rt_Input = false;
             inputHandler.d_Pad_Up = false;
@@ -78,7 +72,14 @@ namespace CH
             inputHandler.jump_Input = false;
             inputHandler.inventory_Input = false;
 
-            if(isInAir)
+            float delta = Time.deltaTime;
+            if (cameraHandler != null)
+            {
+                cameraHandler.FollowTarget(delta);
+                cameraHandler.HandleCameraRotation(delta, inputHandler.mouseX, inputHandler.mouseY);
+            }
+
+            if (isInAir)
             {
                 playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
             }

@@ -38308,9 +38308,9 @@ MonoBehaviour:
   targetTransform: {fileID: 694136051}
   cameraTransform: {fileID: 963194228}
   cameraPivotTransform: {fileID: 1160841780}
-  lookSpeed: 0.1
+  lookSpeed: 300
   followSpeed: 0.1
-  pivotSpeed: 0.03
+  pivotSpeed: 300
   cameraSphereradius: 0.2
   cameraCollisionOffset: 0.2
   minimumCollisionOffset: 0.2
@@ -74674,6 +74674,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2316220535866251568, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220535866251571, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: fallingSpeed
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 2316220535866251574, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: m_RootOrder
       value: 5

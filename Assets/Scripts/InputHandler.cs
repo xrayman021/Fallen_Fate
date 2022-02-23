@@ -57,6 +57,14 @@ namespace CH
                 inputActions = new PlayerControls();
                 inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
                 inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+                inputActions.PlayerActions.RB.performed += i => rb_Input = true;
+                inputActions.PlayerActions.RT.performed += i => rt_Input = true;
+                inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
+                inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
+                inputActions.PlayerActions.A.performed += i => a_Input = true;
+                inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
+                inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
+
             }
             inputActions.Enable();
         }
@@ -72,8 +80,8 @@ namespace CH
             HandleRollInput(delta);
             HandleAttackInput(delta);
             HandleQuickSlotsInput();
-            HandleInteractableInput();
-            HandleJumpInput();
+            //HandleInteractableInput();
+            //HandleJumpInput();
             HandleInventoryInput();
         }
 
@@ -89,11 +97,11 @@ namespace CH
         private void HandleRollInput(float delta)
         {
             b_Input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
+            sprintFlag = b_Input;
 
-            if(b_Input)
+            if (b_Input)
             {
                 rollInputTimer += delta;
-                sprintFlag = true;
             }
             else
             {
@@ -108,8 +116,7 @@ namespace CH
 
         private void HandleAttackInput(float delta)
         {
-            inputActions.PlayerActions.RB.performed += i => rb_Input = true;
-            inputActions.PlayerActions.RT.performed += i => rt_Input = true;
+            
 
             //RB handles the right hand weapon's light attacks
             if(rb_Input)
@@ -139,8 +146,7 @@ namespace CH
 
         private void HandleQuickSlotsInput()
         {
-            inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
-            inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
+            
             if (d_Pad_Right)
             {
                 playerInventory.ChangeRightWeapon();
@@ -151,19 +157,12 @@ namespace CH
             }
         }
 
-        private void HandleInteractableInput()
-        {
-            inputActions.PlayerActions.A.performed += i => a_Input = true;
-        }
+        
 
-        private void HandleJumpInput()
-        {
-            inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
-        }
+        
 
         private void HandleInventoryInput()
         {
-            inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
 
             if(inventory_Input)
             {
