@@ -234,6 +234,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "LockOn",
+                    "type": "Button",
+                    "id": "c71e9260-7595-436f-b31d-9719089a7305",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "b574baa5-9a25-46f5-a9ee-9cba6bd5a5a5",
@@ -449,6 +457,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f10c64c-81d5-4c9c-9791-88fc854268ed",
+                    "path": "<Gamepad>/rightStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LockOn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d1af0fc3-33ef-4115-9f6b-7136fa122252",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LockOn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
