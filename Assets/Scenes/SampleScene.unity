@@ -14346,6 +14346,7 @@ GameObject:
   - component: {fileID: 409662353}
   - component: {fileID: 409662352}
   - component: {fileID: 409662351}
+  - component: {fileID: 409662354}
   m_Layer: 5
   m_Name: Left_Hand_Slot_01
   m_TagString: Untagged
@@ -14467,6 +14468,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409662349}
   m_CullTransparentMesh: 1
+--- !u!114 &409662354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409662349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744b4f2cc2987ee41b6e16db8eb84dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 1576299185}
+  rightHandSlot01: 0
+  rightHandSlot02: 0
+  leftHandSlot01: 1
+  leftHandSlot02: 0
 --- !u!1 &410978970
 GameObject:
   m_ObjectHideFlags: 0
@@ -43959,6 +43977,7 @@ GameObject:
   - component: {fileID: 1313818136}
   - component: {fileID: 1313818135}
   - component: {fileID: 1313818134}
+  - component: {fileID: 1313818137}
   m_Layer: 5
   m_Name: Left_Hand_Slot_02
   m_TagString: Untagged
@@ -44080,6 +44099,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313818132}
   m_CullTransparentMesh: 1
+--- !u!114 &1313818137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313818132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744b4f2cc2987ee41b6e16db8eb84dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 1597908389}
+  rightHandSlot01: 0
+  rightHandSlot02: 0
+  leftHandSlot01: 0
+  leftHandSlot02: 1
 --- !u!1 &1314056732
 GameObject:
   m_ObjectHideFlags: 0
@@ -73483,6 +73519,7 @@ GameObject:
   - component: {fileID: 2115284936}
   - component: {fileID: 2115284935}
   - component: {fileID: 2115284934}
+  - component: {fileID: 2115284937}
   m_Layer: 5
   m_Name: Right_Hand_Slot_02
   m_TagString: Untagged
@@ -73604,6 +73641,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115284932}
   m_CullTransparentMesh: 1
+--- !u!114 &2115284937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115284932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744b4f2cc2987ee41b6e16db8eb84dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 1695648738}
+  rightHandSlot01: 0
+  rightHandSlot02: 1
+  leftHandSlot01: 0
+  leftHandSlot02: 0
 --- !u!1 &2116502955
 GameObject:
   m_ObjectHideFlags: 0
@@ -74604,6 +74658,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744b4f2cc2987ee41b6e16db8eb84dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icon: {fileID: 1461131991}
+  rightHandSlot01: 1
+  rightHandSlot02: 0
+  leftHandSlot01: 0
+  leftHandSlot02: 0
 --- !u!1001 &2316220535443977669
 PrefabInstance:
   m_ObjectHideFlags: 0
