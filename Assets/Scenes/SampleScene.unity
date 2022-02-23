@@ -50191,7 +50191,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1461131990
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54569,7 +54569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1576299184
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55843,7 +55843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1597908388
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58919,7 +58919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1695648737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74452,6 +74452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD Window
       objectReference: {fileID: 0}
+    - target: {fileID: 2052230516037135906, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2538587411004395565, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_Name
       value: Weapon Inventory Window
@@ -74718,6 +74722,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2316220535866251580, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: weaponsInLeftHandSlots.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ec4429b38715694788eb73a29684119, type: 2}
+    - target: {fileID: 2316220535866251580, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: weaponsInRightHandSlots.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 1ec4429b38715694788eb73a29684119, type: 2}
     - target: {fileID: 2316220535866251581, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: interactableUIGameObject
       value: 

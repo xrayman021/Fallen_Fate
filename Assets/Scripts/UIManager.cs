@@ -27,6 +27,7 @@ namespace CH
         private void Start()
         {
             weaponInventorySlots = weaponInventorySlotsParent.GetComponentsInChildren<WeaponInventorySlot>();
+            equipmentWindowUI.LoadWeaponsOnEquipmentScreen(playerInventory);
         }
 
         public void UpdateUI()

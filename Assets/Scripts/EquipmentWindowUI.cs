@@ -11,6 +11,36 @@ namespace CH
         public bool leftHandSlot01Selected;
         public bool leftHandSlot02Selected;
 
+        HandEquipmentSlotUI[] handEquipmentSlotUI;
+
+        private void Start()
+        {
+            handEquipmentSlotUI = GetComponentsInChildren<HandEquipmentSlotUI>();
+        }
+
+        public void LoadWeaponsOnEquipmentScreen(PlayerInventory playerInventory)
+        {
+            for (int i = 0; i < handEquipmentSlotUI.Length; i++)
+            {
+                if(handEquipmentSlotUI[i].rightHandSlot01)
+                {
+                    handEquipmentSlotUI[i].AddItem(playerInventory.weaponsInRightHandSlots[0]);
+                }
+                else if(handEquipmentSlotUI[i].rightHandSlot02)
+                {
+                    handEquipmentSlotUI[i].AddItem(playerInventory.weaponsInRightHandSlots[1]);
+                }
+                else if (handEquipmentSlotUI[i].leftHandSlot01)
+                {
+                    handEquipmentSlotUI[i].AddItem(playerInventory.weaponsInLeftHandSlots[0]);
+                }
+                else
+                {
+                    handEquipmentSlotUI[i].AddItem(playerInventory.weaponsInLeftHandSlots[1]);
+                }
+            }
+        }
+
         public void SelectRightHandSlot01()
         {
             rightHandSlot01Selected = true;
