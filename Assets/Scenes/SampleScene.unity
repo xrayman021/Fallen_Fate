@@ -9298,6 +9298,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 223410959}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &225183520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2529756110685705957, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+  m_PrefabInstance: {fileID: 2052230514486516891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &229215038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14369,10 +14374,10 @@ RectTransform:
   m_Father: {fileID: 2052230514486516893}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 170, y: -140}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &409662351
 MonoBehaviour:
@@ -44033,10 +44038,10 @@ RectTransform:
   m_Father: {fileID: 2052230514486516893}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -140}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1313818134
 MonoBehaviour:
@@ -47077,11 +47082,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1389112531 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 826410473511999072, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
-  m_PrefabInstance: {fileID: 2052230514486516891}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1391003295
 GameObject:
   m_ObjectHideFlags: 0
@@ -73625,10 +73625,10 @@ RectTransform:
   m_Father: {fileID: 2052230514486516893}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: -60}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2115284934
 MonoBehaviour:
@@ -74388,6 +74388,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1653648085}
     - target: {fileID: 447796904505740830, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: equipmentWindowUI
+      value: 
+      objectReference: {fileID: 2052230514486516895}
+    - target: {fileID: 447796904505740830, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: weaponInventoryWindow
       value: 
       objectReference: {fileID: 313624789}
@@ -74567,6 +74571,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2529756110685705957, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2538587411004395565, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_Name
       value: Weapon Inventory Window
@@ -74609,7 +74617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3791087843401799062, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3791087843401799062, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -74618,7 +74626,7 @@ PrefabInstance:
     - target: {fileID: 3791087843401799062, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1389112531}
+      objectReference: {fileID: 225183520}
     - target: {fileID: 3791087843401799062, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -74669,27 +74677,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4778512241165117461, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4778512241165117461, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4778512241165117461, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4778512241165117461, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4778512241165117461, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 4778512241165117461, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 5628347988360957181, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -74812,6 +74820,11 @@ MonoBehaviour:
   rightHandSlot02Selected: 0
   leftHandSlot01Selected: 0
   leftHandSlot02Selected: 0
+  handEquipmentSlotUI:
+  - {fileID: 409662354}
+  - {fileID: 1313818137}
+  - {fileID: 2052230514486516897}
+  - {fileID: 2115284937}
 --- !u!1 &2052230514486516896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1640551194624549647, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}

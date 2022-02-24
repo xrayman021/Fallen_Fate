@@ -11,11 +11,11 @@ namespace CH
         public bool leftHandSlot01Selected;
         public bool leftHandSlot02Selected;
 
-        HandEquipmentSlotUI[] handEquipmentSlotUI;
+        public HandEquipmentSlotUI[] handEquipmentSlotUI;
 
         private void Awake()
         {
-            handEquipmentSlotUI = GetComponentsInChildren<HandEquipmentSlotUI>();
+            //handEquipmentSlotUI = GetComponentsInChildren<HandEquipmentSlotUI>();
         }
 
         public void LoadWeaponsOnEquipmentScreen(PlayerInventory playerInventory)

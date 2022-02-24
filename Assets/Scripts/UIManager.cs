@@ -7,7 +7,7 @@ namespace CH
     public class UIManager : MonoBehaviour
     {
         public PlayerInventory playerInventory;
-        EquipmentWindowUI equipmentWindowUI;
+        public EquipmentWindowUI equipmentWindowUI;
 
         [Header("UI Windows")]
         public GameObject hudWindow;
@@ -21,7 +21,7 @@ namespace CH
 
         private void Awake()
         {
-            equipmentWindowUI = FindObjectOfType<EquipmentWindowUI>();
+            //equipmentWindowUI = FindObjectOfType<EquipmentWindowUI>();
         }
 
         private void Start()
