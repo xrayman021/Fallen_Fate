@@ -14435,6 +14435,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 313624789}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 225183520}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 409662354}
+        m_TargetAssemblyTypeName: CH.HandEquipmentSlotUI, Assembly-CSharp
+        m_MethodName: SelectThisSlot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &409662352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24035,6 +24071,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1077792413857475659, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
   m_PrefabInstance: {fileID: 2052230514486516891}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &676078274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1195375989967211505, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+  m_PrefabInstance: {fileID: 2052230514486516891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676078272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea7e1bc9af8234448bdf0e3e848f3f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &676253923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44090,6 +44137,42 @@ MonoBehaviour:
       - m_Target: {fileID: 2052230514486516895}
         m_TargetAssemblyTypeName: CH.EquipmentWindowUI, Assembly-CSharp
         m_MethodName: SelectLeftHandSlot02
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 313624789}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 225183520}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1313818137}
+        m_TargetAssemblyTypeName: CH.HandEquipmentSlotUI, Assembly-CSharp
+        m_MethodName: SelectThisSlot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -73686,6 +73769,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 313624789}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 225183520}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2115284937}
+        m_TargetAssemblyTypeName: CH.HandEquipmentSlotUI, Assembly-CSharp
+        m_MethodName: SelectThisSlot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2115284935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74392,6 +74511,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2052230514486516895}
     - target: {fileID: 447796904505740830, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: equipmentScreenWindow
+      value: 
+      objectReference: {fileID: 225183520}
+    - target: {fileID: 447796904505740830, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: weaponInventoryWindow
       value: 
       objectReference: {fileID: 313624789}
@@ -74430,6 +74553,10 @@ PrefabInstance:
     - target: {fileID: 857746407180849501, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1077792413857475659, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1195375989967211505, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: icon
@@ -74571,6 +74698,62 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 676078274}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 313624789}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EquipThisItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CH.WeaponInventorySlot, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2505119353449919507, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2529756110685705957, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_Name
+      value: Equipment Screen Window
+      objectReference: {fileID: 0}
     - target: {fileID: 2529756110685705957, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -74589,10 +74772,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
@@ -74600,7 +74795,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2052230514486516895}
     - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 313624789}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 225183520}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 2052230514486516897}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
@@ -74608,11 +74827,55 @@ PrefabInstance:
       value: SelectRightHandSlot01
       objectReference: {fileID: 0}
     - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: SelectThisSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CH.EquipmentWindowUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: CH.HandEquipmentSlotUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034111139723212862, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3791087843401799062, guid: c3aa9575ea1cd0442bb5f7535b6d40a7, type: 3}
@@ -74909,6 +75172,14 @@ PrefabInstance:
     - target: {fileID: 2316220535866251575, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220535866251580, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: currentLeftWeaponIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220535866251580, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: currentRightWeaponIndex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2316220535866251580, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: weaponsInLeftHandSlots.Array.data[1]
