@@ -127,7 +127,7 @@ namespace CH
             float shortestDistanceOfLeftTarget = Mathf.Infinity;
             float shortestDistanceOfRightTarget = Mathf.Infinity;
 
-            Collider[] colliders = Physics.OverlapSphere(targetTransform.position, 26);
+            Collider[] colliders = Physics.OverlapSphere(targetTransform.position, 150);
 
             for (int i = 0; i < colliders.Length; i++)
             {
