@@ -23,6 +23,8 @@ namespace CH
         public bool d_Pad_Right;
         public bool inventory_Input;
         public bool lockOnInput;
+        public bool right_Stick_Right_Input;
+        public bool right_Stick_Left_Input;
 
         public bool rollFlag;
         public bool sprintFlag;
@@ -68,6 +70,8 @@ namespace CH
                 inputActions.PlayerActions.Jump.performed += i => jump_Input = true;
                 inputActions.PlayerActions.Inventory.performed += i => inventory_Input = true;
                 inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
+                inputActions.PlayerMovement.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
+                inputActions.PlayerMovement.LockOnTargetLeft.performed += i => right_Stick_Left_Input = true;
             }
             inputActions.Enable();
         }
@@ -187,7 +191,7 @@ namespace CH
         {
             if(lockOnInput && lockOnFlag == false)
             {
-                cameraHandler.ClearLockOnTargets();
+                //cameraHandler.ClearLockOnTargets();
                 lockOnInput = false;
                 cameraHandler.HandleLockOn();
                 if(cameraHandler.nearestLockOnTarget != null)
@@ -201,6 +205,24 @@ namespace CH
                 lockOnInput = false;
                 lockOnFlag = false;
                 cameraHandler.ClearLockOnTargets();
+            }
+            if(lockOnFlag && right_Stick_Left_Input)
+            {
+                right_Stick_Left_Input = false;
+                cameraHandler.HandleLockOn();
+                if(cameraHandler.leftLockTarget != null)
+                {
+                    cameraHandler.currentLockOnTarget = cameraHandler.leftLockTarget;
+                }
+            }
+            if (lockOnFlag && right_Stick_Right_Input)
+            {
+                right_Stick_Right_Input = false;
+                cameraHandler.HandleLockOn();
+                if (cameraHandler.rightLockTarget != null)
+                {
+                    cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
+                }
             }
         }
 
