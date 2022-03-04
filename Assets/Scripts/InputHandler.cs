@@ -231,5 +231,22 @@ namespace CH
             cameraHandler.SetCameraHeight();
         }
 
+        private void HandleTwoHandInput()
+        {
+            if(y_Input)
+            {
+                y_Input = false;
+                twoHandFlag = !twoHandFlag;
+                if(twoHandFlag)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+        }
+
     }
 }

@@ -19,12 +19,14 @@ namespace CH
         QuickSlotsUI quickSlotsUI;
 
         PlayerStats playerStats;
+        InputHandler inputHandler;
 
         private void Awake()
         {
             animator = GetComponent<Animator>();
             quickSlotsUI = FindObjectOfType<QuickSlotsUI>();
             playerStats = GetComponentInParent<PlayerStats>();
+            inputHandler = GetComponentInParent<InputHandler>();
 
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -60,20 +62,28 @@ namespace CH
             }
             else
             {
-                rightHandSlot.LoadWeaponModel(weaponItem);
-                LoadRighttWeaponDamageCollider();
-                quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
-
-                #region Handle Right Weapon Idle Animation
-                if (weaponItem != null)
+                if(inputHandler.twoHandFlag)
                 {
-                    animator.CrossFade(weaponItem.right_hand_idle, 0.2f);
+                    animator.CrossFade(weaponItem.th_idle, 0.2f);
                 }
                 else
                 {
-                    animator.CrossFade("Right Arm Empty", 0.2f);
+                    rightHandSlot.LoadWeaponModel(weaponItem);
+                    LoadRighttWeaponDamageCollider();
+                    quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
+
+                    #region Handle Right Weapon Idle Animation
+                    if (weaponItem != null)
+                    {
+                        animator.CrossFade(weaponItem.right_hand_idle, 0.2f);
+                    }
+                    else
+                    {
+                        animator.CrossFade("Right Arm Empty", 0.2f);
+                    }
+                    #endregion
                 }
-                #endregion
+
             }
         }
 
