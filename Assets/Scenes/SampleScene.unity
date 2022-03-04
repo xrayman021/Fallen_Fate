@@ -107829,6 +107829,22 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2316220535866251569, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_Height
+      value: 1.81664
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220535866251569, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_Radius
+      value: 0.16690385
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220535866251569, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_Center.y
+      value: 0.9616799
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220535866251569, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_Center.z
+      value: -0.0008357763
+      objectReference: {fileID: 0}
     - target: {fileID: 2316220535866251571, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: fallingSpeed
       value: 75
