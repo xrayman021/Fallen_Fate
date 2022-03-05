@@ -43,6 +43,7 @@ namespace CH
         PlayerManager playerManager;
         CameraHandler cameraHandler;
         UIManager uiManager;
+        WeaponSlotManager weaponSlotManager;
 
         Vector2 movementInput;
         Vector2 cameraInput;
@@ -52,6 +53,7 @@ namespace CH
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
             playerManager = GetComponent<PlayerManager>();
+            weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             uiManager = FindObjectOfType<UIManager>();
             cameraHandler = FindObjectOfType<CameraHandler>();
         }
@@ -94,6 +96,7 @@ namespace CH
             //HandleJumpInput();
             HandleInventoryInput();
             HandleLockOnInput();
+            HandleTwoHandInput();
         }
 
         private void HandleMoveInput(float delta)
@@ -239,11 +242,12 @@ namespace CH
                 twoHandFlag = !twoHandFlag;
                 if(twoHandFlag)
                 {
-
+                    weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
                 }
                 else
                 {
-
+                    weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
+                    weaponSlotManager.LoadWeaponOnSlot(playerInventory.leftWeapon, true);
                 }
             }
         }

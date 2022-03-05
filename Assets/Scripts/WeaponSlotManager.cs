@@ -65,14 +65,13 @@ namespace CH
                 if(inputHandler.twoHandFlag)
                 {
                     animator.CrossFade(weaponItem.th_idle, 0.2f);
+                    Debug.Log("Two hands.");
                 }
                 else
                 {
-                    rightHandSlot.LoadWeaponModel(weaponItem);
-                    LoadRighttWeaponDamageCollider();
-                    quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
 
                     #region Handle Right Weapon Idle Animation
+                    animator.CrossFade("Both Arms Empty", 0.2f);
                     if (weaponItem != null)
                     {
                         animator.CrossFade(weaponItem.right_hand_idle, 0.2f);
@@ -83,7 +82,9 @@ namespace CH
                     }
                     #endregion
                 }
-
+                rightHandSlot.LoadWeaponModel(weaponItem);
+                LoadRighttWeaponDamageCollider();
+                quickSlotsUI.UpdateWeaponQuickSlotsUI(false, weaponItem);
             }
         }
 
