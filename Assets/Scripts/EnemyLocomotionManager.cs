@@ -6,16 +6,23 @@ namespace CH
 {
     public class EnemyLocomotionManager : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        EnemyManager enemyManager;
 
+        public LayerMask detectionLayer;
+
+        private void Awake()
+        {
+            enemyManager = GetComponent<EnemyManager>();
         }
 
-        // Update is called once per frame
-        void Update()
+        public void HandleDetection()
         {
+            Collider[] colliders = Physics.OverlapSphere(transform.position, enemyManager.detectionRadius, detectionLayer);
 
+            for (int i = 0; i < colliders.Length; i++)
+            {
+
+            }
         }
     }
 }

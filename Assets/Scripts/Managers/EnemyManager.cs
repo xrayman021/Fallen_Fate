@@ -7,6 +7,10 @@ namespace CH
     public class EnemyManager : CharacterManager
     {
         bool isPerformingAction;
+
+        [Header("AI Settings")]
+        public float detectionRadius;
+
         private void Awake()
         {
             
