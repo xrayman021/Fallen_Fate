@@ -22,6 +22,9 @@ MonoBehaviour:
   OH_Light_Attack_1: OH_Light_Attack_01
   OH_Light_Attack_2: OH_Light_Attack_02
   OH_Heavy_Attack_1: OH_Heavy_Attack_01
+  TH_Light_Attack_1: TH_Sword_Attack_01
+  TH_Light_Attack_2: TH_Sword_Attack_02
+  TH_Heavy_Attack_1: TH_Sword_Heavy_Attack_01
   baseStamina: 20
   lightAttackMultiplier: 1
   heavyAttackMultiplier: 2
