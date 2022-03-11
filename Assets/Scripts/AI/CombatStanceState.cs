@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatStanceState : MonoBehaviour
+namespace CH
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CombatStanceState : State
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        {
+            //Check for attack range.
+            //Potentially circle player or walk around them.
+            //If in attack range return attack state.
+            return this;
+        }
     }
 }
