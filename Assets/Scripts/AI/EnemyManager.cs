@@ -32,16 +32,13 @@ namespace CH
 
         private void HandleCurrentAction()
         {
-            if(enemyLocomotionManager.currentTarget == null)
+            if (enemyLocomotionManager.currentTarget == null)
             {
-                if(enemyLocomotionManager.currentTarget == null)
-                {
-                    enemyLocomotionManager.HandleDetection();
-                }
-                else
-                {
-                    enemyLocomotionManager.HandleMoveToTarget();
-                }
+                enemyLocomotionManager.HandleDetection();
+            }
+            else if(enemyLocomotionManager.distanceFromTarget > enemyLocomotionManager.stoppingDistance)
+            {
+                enemyLocomotionManager.HandleMoveToTarget();
             }
         }
     }

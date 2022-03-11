@@ -16,7 +16,7 @@ namespace CH
         public LayerMask detectionLayer;
 
         public float distanceFromTarget;
-        public float stoppingDistance = 0.1f;
+        public float stoppingDistance = 1f;
 
         public float rotationSpeed = 15;
 
@@ -87,6 +87,7 @@ namespace CH
 
         private void HandleRotateTowardsTarget()
         {
+            Debug.Log("HandleRotateTowardsTarget()");
             //Rotate manually
             if(enemyManager.isPerformingAction)
             {
@@ -104,6 +105,7 @@ namespace CH
             }   
             else
             {
+                Debug.Log("Enemy is Moving.");
                 Vector3 relativeDirection = transform.InverseTransformDirection(navMeshAgent.desiredVelocity);
                 Vector3 targetVelocity = enemyRigidBody.velocity;
 
