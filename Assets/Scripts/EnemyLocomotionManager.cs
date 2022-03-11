@@ -87,11 +87,11 @@ namespace CH
 
         private void HandleRotateTowardsTarget()
         {
-            Debug.Log("HandleRotateTowardsTarget()");
+            //Debug.Log("HandleRotateTowardsTarget()");
             //Rotate manually
             if(enemyManager.isPerformingAction)
             {
-                Debug.Log("Enemy Doing Something");
+                //Debug.Log("Enemy Doing Something");
                 Vector3 direction = currentTarget.transform.position - transform.position;
                 direction.y = 0;
                 direction.Normalize();
@@ -105,7 +105,7 @@ namespace CH
             }   
             else
             {
-                Debug.Log("Enemy is Moving.");
+                //Debug.Log("Enemy is Moving.");
                 Vector3 relativeDirection = transform.InverseTransformDirection(navMeshAgent.desiredVelocity);
                 Vector3 targetVelocity = enemyRigidBody.velocity;
 

@@ -40,6 +40,14 @@ namespace CH
             {
                 enemyLocomotionManager.HandleMoveToTarget();
             }
+            else if(enemyLocomotionManager.distanceFromTarget <= enemyLocomotionManager.stoppingDistance)
+            {
+                //Handle our attacks.
+            }
         }
+
+        #region Attacks
+
+        #endregion
     }
 }
