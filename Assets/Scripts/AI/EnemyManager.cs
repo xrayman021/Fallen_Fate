@@ -22,6 +22,11 @@ namespace CH
 
         private void Update()
         {
+
+        }
+
+        private void FixedUpdate()
+        {
             HandleCurrentAction();
         }
 
@@ -32,6 +37,10 @@ namespace CH
                 if(enemyLocomotionManager.currentTarget == null)
                 {
                     enemyLocomotionManager.HandleDetection();
+                }
+                else
+                {
+                    enemyLocomotionManager.HandleMoveToTarget();
                 }
             }
         }
