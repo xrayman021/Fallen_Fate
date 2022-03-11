@@ -7,6 +7,7 @@ namespace CH
     public class EnemyLocomotionManager : MonoBehaviour
     {
         EnemyManager enemyManager;
+        EnemyAnimatorManager enemyAnimatorManager;
 
         public CharacterStats currentTarget;
         public LayerMask detectionLayer;
@@ -35,6 +36,17 @@ namespace CH
                         currentTarget = characterStats;
                     }
                 }
+            }
+        }
+
+        public void HandleMoveToTarget()
+        {
+            Vector3 targetDirection = currentTarget.transform.position - transform.position;
+            float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
+
+            if(enemyManager.isPerformingAction)
+            {
+
             }
         }
     }

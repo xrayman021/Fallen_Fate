@@ -7,7 +7,7 @@ namespace CH
     public class EnemyManager : CharacterManager
     {
         EnemyLocomotionManager enemyLocomotionManager;
-        bool isPerformingAction;
+        public bool isPerformingAction;
 
         [Header("AI Settings")]
         public float detectionRadius;
