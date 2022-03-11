@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : MonoBehaviour
+namespace CH
 {
-    // Start is called before the first frame update
-    void Start()
+    public class IdleState : State
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        {
+            //Look for a potential target.
+            //Switch to pursue target state if target is found.
+            return this;
+        }
     }
 }
