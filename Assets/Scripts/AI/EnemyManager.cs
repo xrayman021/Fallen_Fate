@@ -8,11 +8,12 @@ namespace CH
     {
         EnemyLocomotionManager enemyLocomotionManager;
         EnemyAnimatorManager enemyAnimationManager;
+        EnemyStats enemyStats;
+
+        public State currentState;
+        public CharacterStats currentTarget;
 
         public bool isPerformingAction;
-
-        public EnemyAttackAction[] enemyAttacks;
-        public EnemyAttackAction currentAttack;
 
         [Header("A.I Settings")]
         public float detectionRadius = 20;
@@ -26,6 +27,7 @@ namespace CH
         {
             enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
             enemyAnimationManager = GetComponentInChildren<EnemyAnimatorManager>();
+            enemyStats = GetComponent<EnemyStats>();
         }
 
         private void Update()
@@ -35,28 +37,25 @@ namespace CH
 
         private void FixedUpdate()
         {
-            HandleCurrentAction();
+            HandleStateMachine();
         }
 
-        private void HandleCurrentAction()
+        private void HandleStateMachine()
         {
-            if (enemyLocomotionManager.currentTarget != null)
+            if(currentState != null)
             {
-                enemyLocomotionManager.distanceFromTarget =
-                    Vector3.Distance(enemyLocomotionManager.currentTarget.transform.position, transform.position);
+                State nextState = currentState.Tick(this, enemyStats, enemyAnimationManager);
+
+                if(nextState != null)
+                {
+                    SwitchToNextState(nextState);
+                }
             }
-            if (enemyLocomotionManager.currentTarget == null)
-            {
-                enemyLocomotionManager.HandleDetection();
-            }
-            else if (enemyLocomotionManager.distanceFromTarget > enemyLocomotionManager.stoppingDistance)
-            {
-                enemyLocomotionManager.HandleMoveToTarget();
-            }
-            else if (enemyLocomotionManager.distanceFromTarget <= enemyLocomotionManager.stoppingDistance)
-            {
-                AttackTarget();
-            }
+        }
+
+        private void SwitchToNextState(State state)
+        {
+            currentState = state;
         }
 
         private void HandleRecoveryTimer()
@@ -79,7 +78,7 @@ namespace CH
 
         private void AttackTarget()
         {
-            if (isPerformingAction)
+            /*if (isPerformingAction)
                 return;
 
             if (currentAttack == null)
@@ -92,11 +91,11 @@ namespace CH
                 currentRecoveryTime = currentAttack.recoveryTime;
                 enemyAnimationManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
                 currentAttack = null;
-            }
+            }*/
         }
         private void GetNewAttack()
         {
-            Vector3 targetsDirection = enemyLocomotionManager.currentTarget.transform.position - transform.position;
+            /*Vector3 targetsDirection = enemyLocomotionManager.currentTarget.transform.position - transform.position;
             float viewableAngle = Vector3.Angle(targetsDirection, transform.forward);
             enemyLocomotionManager.distanceFromTarget = Vector3.Distance(enemyLocomotionManager.currentTarget.transform.position, transform.position);
 
@@ -141,7 +140,7 @@ namespace CH
                         }
                     }
                 }
-            }
+            }*/
         }
         #endregion
     }

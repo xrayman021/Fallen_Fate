@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackState : MonoBehaviour
+namespace CH
 {
-    // Start is called before the first frame update
-    void Start()
+    public class AttackState : State
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
+        {
+            //Select one of our many attacks based on attack scores.
+            //If the selected attack is not able to be used becuase of angle or distance, select a new attack.
+            //If the attack is viable, stop movement and attack target.
+            //Set recovery timer to the attack's recovery time.
+            //Return the combat stance.
+            //public EnemyAttackAction[] enemyAttacks;
+            //public EnemyAttackAction currentAttack;
+            return this;
+        }
     }
 }
