@@ -16,7 +16,7 @@ namespace CH
         public LayerMask detectionLayer;
 
         public float distanceFromTarget;
-        public float stoppingDistance = 1f;
+        public float stoppingDistance = 0.1f;
 
         public float rotationSpeed = 15;
 
@@ -90,6 +90,7 @@ namespace CH
             //Rotate manually
             if(enemyManager.isPerformingAction)
             {
+                Debug.Log("Enemy Doing Something");
                 Vector3 direction = currentTarget.transform.position - transform.position;
                 direction.y = 0;
                 direction.Normalize();

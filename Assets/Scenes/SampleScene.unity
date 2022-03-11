@@ -18924,7 +18924,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!65 &369921778
 BoxCollider:
@@ -66000,10 +66000,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.49
-  m_Height: 1.8728919
+  m_Radius: 0.33538088
+  m_Height: 1.8533416
   m_Direction: 1
-  m_Center: {x: 0.00283432, y: 0.7671764, z: 1.2522542e-17}
+  m_Center: {x: 0.00283432, y: 0.77695155, z: -0.0044358373}
 --- !u!114 &1350947976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66030,7 +66030,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350947973}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8.254, y: 0.1, z: 3.62}
+  m_LocalPosition: {x: -10.009, y: 8.09, z: 12.489}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1583143121}
@@ -66072,7 +66072,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   detectionLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   distanceFromTarget: 0
   stoppingDistance: 1
   rotationSpeed: 25
@@ -79665,6 +79665,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3336bcfabf72f7343a6634f357922b68, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 1913fa84e05896a41b0013e3ffe7211d, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7282825781840034688, guid: 1913fa84e05896a41b0013e3ffe7211d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
