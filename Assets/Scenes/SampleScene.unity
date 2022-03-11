@@ -7409,6 +7409,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128127018}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &129359572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1913fa84e05896a41b0013e3ffe7211d, type: 3}
+  m_PrefabInstance: {fileID: 1583143120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &129359573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129359572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a870d5c30dbcfb4587b9c5874c41b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!1 &129520036
 GameObject:
   m_ObjectHideFlags: 0
@@ -66033,6 +66051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 1544678048}
+  isPerformingAction: 0
   detectionRadius: 20
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
@@ -66048,6 +66067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c285e55e076e744a98876376f5c1c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTarget: {fileID: 0}
   detectionLayer:
     serializedVersion: 2
     m_Bits: 2048
