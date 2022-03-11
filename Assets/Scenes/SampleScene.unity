@@ -66001,6 +66001,9 @@ MonoBehaviour:
   healthLevel: 10
   maxHealth: 100
   currentHealth: 0
+  staminaLevel: 10
+  maxStamina: 0
+  currentStamina: 0
 --- !u!4 &1350947977
 Transform:
   m_ObjectHideFlags: 0
@@ -66030,6 +66033,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 1544678048}
+  detectionRadius: 20
+  maximumDetectionAngle: 50
+  minimumDetectionAngle: -50
 --- !u!114 &1350947979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66042,6 +66048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c285e55e076e744a98876376f5c1c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &1353033370
 GameObject:
   m_ObjectHideFlags: 0
@@ -107162,6 +107171,10 @@ PrefabInstance:
     - target: {fileID: 2316220535866251575, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220535866251575, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2316220535866251580, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: currentLeftWeaponIndex
