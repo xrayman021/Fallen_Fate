@@ -18,7 +18,7 @@ namespace CH
         public CharacterStats currentTarget;
 
         public bool isPerformingAction;
-
+        public bool isInteracting;
         public float distanceFromTarget;
         public float maximumAttackRange = 1.5f;
 
@@ -51,6 +51,7 @@ namespace CH
         private void Update()
         {
             HandleRecoveryTimer();
+            isInteracting = enemyAnimationManager.anim.GetBool("isInteracting");
         }
 
         private void FixedUpdate()
