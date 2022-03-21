@@ -78552,7 +78552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSleeping: 1
   detectionRadius: 2
-  sleepAnimation: GetUp
+  sleepAnimation: Sleep
   wakeAnimation: GetUp
   detectionLayer:
     serializedVersion: 2
