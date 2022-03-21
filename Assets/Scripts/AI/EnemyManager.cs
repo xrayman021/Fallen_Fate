@@ -19,9 +19,7 @@ namespace CH
 
         public bool isPerformingAction;
         public bool isInteracting;
-        public float distanceFromTarget;
         public float maximumAttackRange = 1.5f;
-
         public float rotationSpeed = 15;
         //public float maximumAttackRange = 1.5f;
 
@@ -30,8 +28,6 @@ namespace CH
         //The higher, and lower, respectively these angles are, the greater detection FIELD OF VIEW (basically like eye sight)
         public float maximumDetectionAngle = 50;
         public float minimumDetectionAngle = -50;
-        public float viewableAngle;
-
         public float currentRecoveryTime = 0;
 
         private void Awake()
