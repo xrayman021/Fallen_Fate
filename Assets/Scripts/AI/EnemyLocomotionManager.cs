@@ -9,7 +9,9 @@ namespace CH
     {
         EnemyManager enemyManager;
         EnemyAnimatorManager enemyAnimatorManager;
-        
+
+        public CapsuleCollider characterCollider;
+        public CapsuleCollider characterCollisionBlockerCollider;
 
         public LayerMask detectionLayer;
 
@@ -22,10 +24,9 @@ namespace CH
             //enemyRigidBody = GetComponent<Rigidbody>();
         }
 
-        
-
-        
-
-        
+        private void Start()
+        {
+            Physics.IgnoreCollision(characterCollider, characterCollisionBlockerCollider, true);
+        }
     }
 }

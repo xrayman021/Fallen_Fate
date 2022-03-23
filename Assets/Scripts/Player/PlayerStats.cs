@@ -41,6 +41,9 @@ namespace CH
 
         public void TakeDamage(int damage)
         {
+            if (isDead)
+                return;
+
             currentHealth = currentHealth - damage;
             healthBar.SetCurrentHealth(currentHealth);
             animatorHandler.PlayTargetAnimation("Damage_01", true);
@@ -49,6 +52,7 @@ namespace CH
             {
                 currentHealth = 0;
                 animatorHandler.PlayTargetAnimation("Dead_01", true);
+                isDead = true;
                 //Handle player death
             }
         }

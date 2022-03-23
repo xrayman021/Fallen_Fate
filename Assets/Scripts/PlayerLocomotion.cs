@@ -42,7 +42,10 @@ namespace CH
         [SerializeField]
         float fallingSpeed = 45;
 
-        
+        public CapsuleCollider characterCollider;
+        public CapsuleCollider characterCollisionBlockerCollider;
+
+
 
         // Start is called before the first frame update
         void Start()
@@ -58,6 +61,8 @@ namespace CH
 
             playerManager.isGrounded = true;
             ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
+
+            Physics.IgnoreCollision(characterCollider, characterCollisionBlockerCollider);
 
         }
 

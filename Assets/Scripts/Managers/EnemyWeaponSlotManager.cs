@@ -33,10 +33,7 @@ namespace CH
 
         private void Start()
         {
-            if(rightHandWeapon != null)
-            {
-                LoadWeaponOnSlot(rightHandWeapon, false);
-            }
+            LoadWeaponsOnBothHands();
         }
 
         public void LoadWeaponOnSlot(WeaponItem weapon, bool isLeft)
@@ -54,6 +51,19 @@ namespace CH
                 LoadWeaponsDamageCollider(false);
             }
         }
+
+        public void LoadWeaponsOnBothHands()
+        {
+            if (rightHandWeapon != null)
+            {
+                LoadWeaponOnSlot(rightHandWeapon, false);
+            }
+            if (leftHandWeapon != null)
+            {
+                LoadWeaponOnSlot(leftHandWeapon, true);
+            }
+        }
+
         public void LoadWeaponsDamageCollider(bool isLeft)
         {
             if (isLeft)
@@ -74,6 +84,8 @@ namespace CH
         {
             rightHandDamageCollider.EnableDamageCollider();
         }
+
+        
 
     }
 }
