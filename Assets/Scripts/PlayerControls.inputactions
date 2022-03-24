@@ -246,6 +246,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "Critical Attack",
+                    "type": "Button",
+                    "id": "79cecb23-ff63-4136-8dc5-5050e317892f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "RT",
                     "type": "Button",
                     "id": "82ac0b6f-a9b5-47fd-a84b-4d156e67f160",
@@ -569,6 +577,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Y",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09ec61b1-21a8-4508-b9f7-052e1ff76bba",
+                    "path": "<Keyboard>/e",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Critical Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1db47a16-151e-4e37-bc80-933485f2587a",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Critical Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
