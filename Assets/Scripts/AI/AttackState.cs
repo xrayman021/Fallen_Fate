@@ -16,6 +16,8 @@ namespace CH
             float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
             float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
 
+            HandleRotateTowardsTarget(enemyManager);
+
             if (enemyManager.isPerformingAction)
                 return combatStanceState;
 
