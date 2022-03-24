@@ -28,6 +28,9 @@ namespace CH
 
         public void TakeDamage(int damage)
         {
+            if (isDead)
+                return;
+
             currentHealth = currentHealth - damage;
             Debug.Log("Enemy was hit");
             //healthBar.SetCurrentHealth(currentHealth);
@@ -37,6 +40,7 @@ namespace CH
             {
                 currentHealth = 0;
                 animator.Play("Dead_01");
+                isDead = true;
                 //Handle enemy death
             }
         }
