@@ -40,6 +40,7 @@ namespace CH
             playerLocomotion = GetComponent<PlayerLocomotion>();
             interactableUI = FindObjectOfType<InteractableUI>();
             playerStats = GetComponent<PlayerStats>();
+            backstabCollider = GetComponentInChildren<BackstabCollider>();
         }
 
         

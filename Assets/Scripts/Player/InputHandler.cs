@@ -17,6 +17,7 @@ namespace CH
         public bool y_Input;
         public bool rb_Input;
         public bool rt_Input;
+        public bool critical_Attack_Input;
         public bool jump_Input;
         public bool d_Pad_Up;
         public bool d_Pad_Down;
@@ -35,7 +36,10 @@ namespace CH
         public bool inventoryFlag;
         public float rollInputTimer;
 
-        
+        public Transform criticalAttackRaycastStartPoint;
+
+
+
 
         PlayerControls inputActions;
         PlayerAttacker playerAttacker;
@@ -79,6 +83,7 @@ namespace CH
                 inputActions.PlayerMovement.LockOnTargetRight.performed += i => right_Stick_Right_Input = true;
                 inputActions.PlayerMovement.LockOnTargetLeft.performed += i => right_Stick_Left_Input = true;
                 inputActions.PlayerActions.Y.performed += i => y_Input = true;
+                inputActions.PlayerActions.CriticalAttack.performed += i => critical_Attack_Input = true;
             }
             inputActions.Enable();
         }
@@ -253,6 +258,15 @@ namespace CH
                     weaponSlotManager.LoadWeaponOnSlot(playerInventory.rightWeapon, false);
                     weaponSlotManager.LoadWeaponOnSlot(playerInventory.leftWeapon, true);
                 }
+            }
+        }
+
+        private void HandleCriticalAttackInput()
+        {
+            if(critical_Attack_Input)
+            {
+                critical_Attack_Input = false;
+                //playerAttacker.AttemptBackstabOrRiposte();
             }
         }
 

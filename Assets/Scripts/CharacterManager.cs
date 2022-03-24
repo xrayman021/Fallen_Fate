@@ -6,6 +6,11 @@ namespace CH
 {
     public class CharacterManager : MonoBehaviour
     {
+        [Header("Lock On Transform")]
         public Transform lockOnTransform;
+
+        [Header("Combat Colliders")]
+        public BoxCollider backstabBoxCollider;
+        protected BackstabCollider backstabCollider;
     }
 }

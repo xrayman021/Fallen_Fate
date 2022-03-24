@@ -259,6 +259,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""CriticalAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""79cecb23-ff63-4136-8dc5-5050e317892f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""RT"",
                     ""type"": ""Button"",
                     ""id"": ""82ac0b6f-a9b5-47fd-a84b-4d156e67f160"",
@@ -584,6 +592,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Y"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09ec61b1-21a8-4508-b9f7-052e1ff76bba"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CriticalAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1db47a16-151e-4e37-bc80-933485f2587a"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CriticalAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -601,6 +631,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_Inventory = m_PlayerActions.FindAction("Inventory", throwIfNotFound: true);
         m_PlayerActions_Roll = m_PlayerActions.FindAction("Roll", throwIfNotFound: true);
         m_PlayerActions_RB = m_PlayerActions.FindAction("RB", throwIfNotFound: true);
+        m_PlayerActions_CriticalAttack = m_PlayerActions.FindAction("CriticalAttack", throwIfNotFound: true);
         m_PlayerActions_RT = m_PlayerActions.FindAction("RT", throwIfNotFound: true);
         m_PlayerActions_DPadUp = m_PlayerActions.FindAction("D-Pad Up", throwIfNotFound: true);
         m_PlayerActions_DPadDown = m_PlayerActions.FindAction("D-Pad Down", throwIfNotFound: true);
@@ -719,6 +750,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_Inventory;
     private readonly InputAction m_PlayerActions_Roll;
     private readonly InputAction m_PlayerActions_RB;
+    private readonly InputAction m_PlayerActions_CriticalAttack;
     private readonly InputAction m_PlayerActions_RT;
     private readonly InputAction m_PlayerActions_DPadUp;
     private readonly InputAction m_PlayerActions_DPadDown;
@@ -735,6 +767,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Inventory => m_Wrapper.m_PlayerActions_Inventory;
         public InputAction @Roll => m_Wrapper.m_PlayerActions_Roll;
         public InputAction @RB => m_Wrapper.m_PlayerActions_RB;
+        public InputAction @CriticalAttack => m_Wrapper.m_PlayerActions_CriticalAttack;
         public InputAction @RT => m_Wrapper.m_PlayerActions_RT;
         public InputAction @DPadUp => m_Wrapper.m_PlayerActions_DPadUp;
         public InputAction @DPadDown => m_Wrapper.m_PlayerActions_DPadDown;
@@ -762,6 +795,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @RB.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRB;
                 @RB.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRB;
                 @RB.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRB;
+                @CriticalAttack.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCriticalAttack;
+                @CriticalAttack.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCriticalAttack;
+                @CriticalAttack.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnCriticalAttack;
                 @RT.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRT;
                 @RT.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRT;
                 @RT.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRT;
@@ -802,6 +838,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @RB.started += instance.OnRB;
                 @RB.performed += instance.OnRB;
                 @RB.canceled += instance.OnRB;
+                @CriticalAttack.started += instance.OnCriticalAttack;
+                @CriticalAttack.performed += instance.OnCriticalAttack;
+                @CriticalAttack.canceled += instance.OnCriticalAttack;
                 @RT.started += instance.OnRT;
                 @RT.performed += instance.OnRT;
                 @RT.canceled += instance.OnRT;
@@ -845,6 +884,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnInventory(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);
         void OnRB(InputAction.CallbackContext context);
+        void OnCriticalAttack(InputAction.CallbackContext context);
         void OnRT(InputAction.CallbackContext context);
         void OnDPadUp(InputAction.CallbackContext context);
         void OnDPadDown(InputAction.CallbackContext context);

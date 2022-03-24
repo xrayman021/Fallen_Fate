@@ -11,6 +11,10 @@ namespace CH
         WeaponSlotManager weaponSlotManager;
         public string lastAttack;
 
+        LayerMask backstabLayer = 1 << 14;
+
+
+
         private void Start()
         {
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
@@ -69,6 +73,27 @@ namespace CH
                 lastAttack = weapon.OH_Heavy_Attack_1;
             }
             
+        }
+
+        private void AttemptBackstabOrRiposte()
+        {
+            RaycastHit hit;
+
+            if(Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position, 
+                transform.TransformDirection(Vector3.forward), out hit, 0.5f, backstabLayer))
+            {
+                CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
+                if(enemyCharacterManager != null)
+                {
+                    //Check for team id
+                    //Pull us into a trasnform behind enemy
+                    //Rotate is towards transform
+                    //play animation
+                    //do damage
+
+
+                }
+            }
         }
     }
 }
