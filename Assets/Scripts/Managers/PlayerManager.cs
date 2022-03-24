@@ -9,6 +9,7 @@ namespace CH
         InputHandler inputHandler;
         Animator anim;
         CameraHandler cameraHandler;
+        PlayerStats playerStats;
         PlayerLocomotion playerLocomotion;
         public GameObject interactableUIGameObject;
         public GameObject itemInteractableGameObject;
@@ -38,6 +39,7 @@ namespace CH
             anim = GetComponentInChildren<Animator>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
             interactableUI = FindObjectOfType<InteractableUI>();
+            playerStats = GetComponent<PlayerStats>();
         }
 
         
@@ -54,7 +56,9 @@ namespace CH
             inputHandler.TickInput(delta);
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleJumping();
+            playerStats.RegenerateStamina();
             CheckForInteractableObject();
+            
         }
 
         private void FixedUpdate()

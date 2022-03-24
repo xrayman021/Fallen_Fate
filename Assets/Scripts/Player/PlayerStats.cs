@@ -13,7 +13,8 @@ namespace CH
 
         AnimatorHandler animatorHandler;
 
-
+        public float staminaRegenerationAmount = 1;
+        public float staminaRegenTimer = 0;
 
         void Start()
         {
@@ -34,7 +35,7 @@ namespace CH
             return maxHealth;
         }
 
-        private int SetMaxStaminaFromStaminaLevel()
+        private float SetMaxStaminaFromStaminaLevel()
         {
             maxStamina = staminaLevel * 10;
             return maxStamina;
@@ -69,6 +70,23 @@ namespace CH
         {
             currentStamina = currentStamina - damage;
             staminaBar.SetCurrentStamina(currentStamina);
+        }
+
+        public void RegenerateStamina()
+        {
+            if(playerManager.isInteracting)
+            {
+                staminaRegenTimer = 0;
+            }
+            else
+            {
+                staminaRegenTimer += Time.deltaTime;
+                if (currentStamina < maxStamina && staminaRegenTimer > 1f)
+                {
+                    currentStamina += staminaRegenerationAmount * Time.deltaTime;
+                    staminaBar.SetCurrentStamina(Mathf.RoundToInt(currentStamina));
+                }
+            }
         }
     }
 }
