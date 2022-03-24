@@ -42,7 +42,9 @@ namespace CH
         public void TakeDamage(int damage)
         {
             if (isDead)
+            {
                 return;
+            }
 
             currentHealth = currentHealth - damage;
             healthBar.SetCurrentHealth(currentHealth);

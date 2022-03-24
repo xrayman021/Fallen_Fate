@@ -13,6 +13,8 @@ namespace CH
             //Chase the target.
             //If within attack range, switch to combat stance state.
 
+            HandleRotateTowardsTarget(enemyManager);
+
             if (enemyManager.isPerformingAction)
             {
                 enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
