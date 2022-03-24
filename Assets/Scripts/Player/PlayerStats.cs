@@ -6,7 +6,7 @@ namespace CH
 {
     public class PlayerStats : CharacterStats
     {
-        
+        PlayerManager playerManager;
 
         public HealthBar healthBar;
         public StaminaBar staminaBar;
@@ -17,6 +17,7 @@ namespace CH
 
         void Start()
         {
+            playerManager = GetComponent<PlayerManager>();
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
@@ -41,6 +42,11 @@ namespace CH
 
         public void TakeDamage(int damage)
         {
+            if (playerManager.isInvulnerable)
+            {
+                return;
+            }
+
             if (isDead)
             {
                 return;
