@@ -55719,7 +55719,7 @@ GameObject:
   - component: {fileID: 1084745875}
   - component: {fileID: 1084745876}
   - component: {fileID: 1084745877}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Backstab Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66759,6 +66759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 1544678048}
   backstabBoxCollider: {fileID: 0}
+  backstabCollider: {fileID: 0}
   navMeshAgent: {fileID: 0}
   enemyRigidBody: {fileID: 1350947974}
   currentState: {fileID: 1565697713}
@@ -97249,7 +97250,7 @@ GameObject:
   - component: {fileID: 1918158150}
   - component: {fileID: 1918158151}
   - component: {fileID: 1918158152}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Backstab Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108803,7 +108804,7 @@ PrefabInstance:
     - target: {fileID: 2316220535866251581, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: backstabCollider
       value: 
-      objectReference: {fileID: 1084745876}
+      objectReference: {fileID: 0}
     - target: {fileID: 2316220535866251581, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: interactableUIGameObject
       value: 
