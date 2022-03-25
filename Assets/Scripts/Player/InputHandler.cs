@@ -46,7 +46,7 @@ namespace CH
         PlayerInventory playerInventory;
         PlayerManager playerManager;
         CameraHandler cameraHandler;
-        AnimatorHandler animatorHandler;
+        PlayerAnimatorManager animatorHandler;
         UIManager uiManager;
         WeaponSlotManager weaponSlotManager;
 
@@ -61,7 +61,7 @@ namespace CH
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             uiManager = FindObjectOfType<UIManager>();
             cameraHandler = FindObjectOfType<CameraHandler>();
-            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+            animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
         }
 
 

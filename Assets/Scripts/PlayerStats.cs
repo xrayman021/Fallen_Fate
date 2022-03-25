@@ -11,7 +11,7 @@ namespace CH
         public HealthBar healthBar;
         public StaminaBar staminaBar;
 
-        AnimatorHandler animatorHandler;
+        PlayerAnimatorManager animatorHandler;
 
         public float staminaRegenerationAmount = 1;
         public float staminaRegenTimer = 0;
@@ -19,7 +19,7 @@ namespace CH
         void Start()
         {
             playerManager = GetComponent<PlayerManager>();
-            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+            animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
             healthBar.SetMaxHealth(maxHealth);
@@ -63,6 +63,18 @@ namespace CH
                 animatorHandler.PlayTargetAnimation("Dead_01", true);
                 isDead = true;
                 //Handle player death
+            }
+        }
+
+        public void TakeDamageNoAnimation(int damage)
+        {
+            currentHealth = currentHealth - damage;
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                isDead = true;
+                //Handle enemy death
             }
         }
 

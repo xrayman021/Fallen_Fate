@@ -7,12 +7,13 @@ namespace CH
     public class WeaponSlotManager : MonoBehaviour
     {
         PlayerManager playerManager;
+        PlayerInventory playerInventory;
         WeaponHolderSlot leftHandSlot;
         WeaponHolderSlot rightHandSlot;
         WeaponHolderSlot backSlot;
 
-        DamageCollider leftHandDamageCollider;
-        DamageCollider rightHandDamageCollider;
+        public DamageCollider leftHandDamageCollider;
+        public DamageCollider rightHandDamageCollider;
 
         public WeaponItem attackingWeapon;
 
@@ -30,6 +31,7 @@ namespace CH
             playerStats = GetComponentInParent<PlayerStats>();
             inputHandler = GetComponentInParent<InputHandler>();
             playerManager = GetComponentInParent<PlayerManager>();
+            playerInventory = GetComponentInParent<PlayerInventory>();
 
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
@@ -107,11 +109,13 @@ namespace CH
         private void LoadLeftWeaponDamageCollider()
         {
             leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+            leftHandDamageCollider.currentWeaponDamage = playerInventory.leftWeapon.baseDamage;
         }
 
         private void LoadRighttWeaponDamageCollider()
         {
             rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+            rightHandDamageCollider.currentWeaponDamage = playerInventory.rightWeapon.baseDamage;
         }
 
         public void OpenDamageCollider()

@@ -6,10 +6,11 @@ namespace CH
 {
     public class PlayerAttacker : MonoBehaviour
     {
-        AnimatorHandler animatorHandler;
+        PlayerAnimatorManager animatorHandler;
         InputHandler inputHandler;
         WeaponSlotManager weaponSlotManager;
         PlayerManager playerManager;
+        PlayerInventory playerInventory;
         public string lastAttack;
 
         LayerMask backstabLayer = 1 << 14;
@@ -18,10 +19,11 @@ namespace CH
 
         private void Start()
         {
-            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+            animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             inputHandler = GetComponent<InputHandler>();
             playerManager = GetComponent<PlayerManager>();
+            playerInventory = GetComponentInParent<PlayerInventory>();
         }
 
         public void HandleWeaponCombo(WeaponItem weapon)
@@ -85,6 +87,7 @@ namespace CH
                 transform.TransformDirection(Vector3.forward), out hit, 0.5f, backstabLayer))
             {
                 CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
+                DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
                 if(enemyCharacterManager != null)
                 {
                     playerManager.transform.position = enemyCharacterManager.backstabCollider.backStabberStandPoint.position;
@@ -95,6 +98,9 @@ namespace CH
                     Quaternion tr = Quaternion.LookRotation(rotationDirection);
                     Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
                     playerManager.transform.rotation = targetRotation;
+
+                    int criticalDamage = playerInventory.rightWeapon.criticalDamageMultiplier * rightWeapon.currentWeaponDamage;
+                    enemyCharacterManager.pendingCriticalDamage = criticalDamage;
 
                     animatorHandler.PlayTargetAnimation("Back Stab", true);
                     enemyCharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Back Stabbed", true);

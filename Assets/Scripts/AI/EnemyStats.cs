@@ -26,6 +26,18 @@ namespace CH
             return maxHealth;
         }
 
+        public void TakeDamageNoAnimation(int damage)
+        {
+            currentHealth = currentHealth - damage;
+
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                isDead = true;
+                //Handle enemy death
+            }
+        }
+
         public void TakeDamage(int damage)
         {
             if (isDead)
