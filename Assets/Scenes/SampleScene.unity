@@ -66690,7 +66690,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!136 &1350947975
 CapsuleCollider:
@@ -66752,7 +66752,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350947973}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbfb0b06fbc5b5a40923cc0d6aedc580, type: 3}
   m_Name: 
@@ -97282,8 +97282,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.27427614, y: 0.41953635, z: 0.040332604}
-  m_Center: {x: 0.014738709, y: -0.076031804, z: 0.4798338}
+  m_Size: {x: 0.8454706, y: 0.41953635, z: 0.7599264}
+  m_Center: {x: 0.0057116747, y: -0.076031804, z: 0.12003684}
 --- !u!114 &1918158152
 MonoBehaviour:
   m_ObjectHideFlags: 0

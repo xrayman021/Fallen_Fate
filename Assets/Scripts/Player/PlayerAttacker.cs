@@ -77,7 +77,7 @@ namespace CH
             
         }
 
-        private void AttemptBackstabOrRiposte()
+        public void AttemptBackstabOrRiposte()
         {
             RaycastHit hit;
 
@@ -97,7 +97,7 @@ namespace CH
                     playerManager.transform.rotation = targetRotation;
 
                     animatorHandler.PlayTargetAnimation("Back Stab", true);
-                    enemyCharacterManager.GetComponentInChildren<AnimatorHandler>().PlayTargetAnimation("Back Stabbed", true);
+                    enemyCharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Back Stabbed", true);
 
 
                 }

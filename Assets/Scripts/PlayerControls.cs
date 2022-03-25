@@ -259,7 +259,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""CriticalAttack"",
+                    ""name"": ""Critical Attack"",
                     ""type"": ""Button"",
                     ""id"": ""79cecb23-ff63-4136-8dc5-5050e317892f"",
                     ""expectedControlType"": ""Button"",
@@ -366,7 +366,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""83bccba3-c318-4a65-92c9-3d10dc314a83"",
                     ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""RB"",
@@ -377,7 +377,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""40ab1921-d283-4fe5-9090-5e6c90ddc326"",
                     ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""RB"",
@@ -600,7 +600,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CriticalAttack"",
+                    ""action"": ""Critical Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -611,7 +611,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CriticalAttack"",
+                    ""action"": ""Critical Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -631,7 +631,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_Inventory = m_PlayerActions.FindAction("Inventory", throwIfNotFound: true);
         m_PlayerActions_Roll = m_PlayerActions.FindAction("Roll", throwIfNotFound: true);
         m_PlayerActions_RB = m_PlayerActions.FindAction("RB", throwIfNotFound: true);
-        m_PlayerActions_CriticalAttack = m_PlayerActions.FindAction("CriticalAttack", throwIfNotFound: true);
+        m_PlayerActions_CriticalAttack = m_PlayerActions.FindAction("Critical Attack", throwIfNotFound: true);
         m_PlayerActions_RT = m_PlayerActions.FindAction("RT", throwIfNotFound: true);
         m_PlayerActions_DPadUp = m_PlayerActions.FindAction("D-Pad Up", throwIfNotFound: true);
         m_PlayerActions_DPadDown = m_PlayerActions.FindAction("D-Pad Down", throwIfNotFound: true);

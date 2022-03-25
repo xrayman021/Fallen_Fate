@@ -104,6 +104,7 @@ namespace CH
             HandleInventoryInput();
             HandleLockOnInput();
             HandleTwoHandInput();
+            HandleCriticalAttackInput();
         }
 
         private void HandleMoveInput(float delta)
@@ -266,7 +267,7 @@ namespace CH
             if(critical_Attack_Input)
             {
                 critical_Attack_Input = false;
-                //playerAttacker.AttemptBackstabOrRiposte();
+                playerAttacker.AttemptBackstabOrRiposte();
             }
         }
 
