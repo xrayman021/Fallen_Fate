@@ -9,6 +9,7 @@ namespace CH
         AnimatorHandler animatorHandler;
         InputHandler inputHandler;
         WeaponSlotManager weaponSlotManager;
+        PlayerManager playerManager;
         public string lastAttack;
 
         LayerMask backstabLayer = 1 << 14;
@@ -20,6 +21,7 @@ namespace CH
             animatorHandler = GetComponentInChildren<AnimatorHandler>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             inputHandler = GetComponent<InputHandler>();
+            playerManager = GetComponent<PlayerManager>();
         }
 
         public void HandleWeaponCombo(WeaponItem weapon)
@@ -85,11 +87,17 @@ namespace CH
                 CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
                 if(enemyCharacterManager != null)
                 {
-                    //Check for team id
-                    //Pull us into a trasnform behind enemy
-                    //Rotate is towards transform
-                    //play animation
-                    //do damage
+                    playerManager.transform.position = enemyCharacterManager.backstabCollider.backStabberStandPoint.position;
+                    Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
+                    rotationDirection = hit.transform.position - playerManager.transform.position;
+                    rotationDirection.y = 0;
+                    rotationDirection.Normalize();
+                    Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                    Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
+                    playerManager.transform.rotation = targetRotation;
+
+                    animatorHandler.PlayTargetAnimation("Back Stab", true);
+                    enemyCharacterManager.GetComponentInChildren<AnimatorHandler>().PlayTargetAnimation("Back Stabbed", true);
 
 
                 }
