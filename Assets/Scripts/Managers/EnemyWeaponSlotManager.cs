@@ -80,7 +80,7 @@ namespace CH
             rightHandDamageCollider.EnableDamageCollider();
         }
 
-        public void CloseDamageColider()
+        public void CloseDamageCollider()
         {
             rightHandDamageCollider.EnableDamageCollider();
         }
