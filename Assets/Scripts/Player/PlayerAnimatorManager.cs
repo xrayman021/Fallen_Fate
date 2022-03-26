@@ -12,7 +12,7 @@ namespace CH
         PlayerLocomotion playerLocomotion;
         int vertical;
         int horizontal;
-        public bool canRotate;
+
 
         public void Initialize()
         {
@@ -25,20 +25,20 @@ namespace CH
             horizontal = Animator.StringToHash("Horizontal");
         }
 
-        public void UpdtateAnimatorValues(float verticalMovement, float horizontalMovement, bool isSprinting)
+        public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement, bool isSprinting)
         {
             #region Vertical
             float v = 0;
 
-            if(verticalMovement > 0 && verticalMovement < 0.55f)
+            if (verticalMovement > 0 && verticalMovement < 0.55f)
             {
                 v = 0.5f;
             }
-            else if(verticalMovement > 0.55f)
+            else if (verticalMovement > 0.55f)
             {
                 v = 1;
             }
-            else if (verticalMovement < 0.55f && verticalMovement > -0.55f)
+            else if (verticalMovement < 0 && verticalMovement > -0.55f)
             {
                 v = -0.5f;
             }
@@ -50,12 +50,10 @@ namespace CH
             {
                 v = 0;
             }
-
-
             #endregion
 
             #region Horizontal
-            float h = 0; //Check this section if it doesn't work.
+            float h = 0;
 
             if (horizontalMovement > 0 && horizontalMovement < 0.55f)
             {
@@ -65,7 +63,7 @@ namespace CH
             {
                 h = 1;
             }
-            else if (horizontalMovement < 0.55f && horizontalMovement > -0.55f)
+            else if (horizontalMovement < 0 && horizontalMovement > -0.55f)
             {
                 h = -0.5f;
             }
@@ -79,7 +77,7 @@ namespace CH
             }
             #endregion
 
-            if(isSprinting)
+            if (isSprinting)
             {
                 v = 2;
                 h = horizontalMovement;
@@ -89,22 +87,21 @@ namespace CH
             anim.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
         }
 
-        
-
         public void CanRotate()
         {
-            canRotate = true;
+            anim.SetBool("canRotate", true);
         }
 
         public void StopRotation()
         {
-            canRotate = false;
+            anim.SetBool("canRotate", false);
         }
 
         public void EnableCombo()
         {
             anim.SetBool("canDoCombo", true);
         }
+
         public void DisableCombo()
         {
             anim.SetBool("canDoCombo", false);
@@ -126,7 +123,6 @@ namespace CH
             playerManager.pendingCriticalDamage = 0;
         }
 
-
         private void OnAnimatorMove()
         {
             if (playerManager.isInteracting == false)
@@ -139,5 +135,6 @@ namespace CH
             Vector3 velocity = deltaPosition / delta;
             playerLocomotion.rigidbody.velocity = velocity;
         }
+
     }
 }

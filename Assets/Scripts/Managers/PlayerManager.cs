@@ -10,10 +10,12 @@ namespace CH
         Animator anim;
         CameraHandler cameraHandler;
         PlayerStats playerStats;
+        PlayerAnimatorManager playerAnimatorManager;
         PlayerLocomotion playerLocomotion;
+
+        InteractableUI interactableUI;
         public GameObject interactableUIGameObject;
         public GameObject itemInteractableGameObject;
-        InteractableUI interactableUI;
 
         public bool isInteracting;
 
@@ -26,50 +28,47 @@ namespace CH
         public bool isUsingLeftHand;
         public bool isInvulnerable;
 
-        /*private void Awake()
-        {
-            
-        }*/
-
-
-        void Start()
+        private void Awake()
         {
             cameraHandler = FindObjectOfType<CameraHandler>();
+            backstabCollider = GetComponentInChildren<BackstabCollider>();
             inputHandler = GetComponent<InputHandler>();
+            playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
             anim = GetComponentInChildren<Animator>();
+            playerStats = GetComponent<PlayerStats>();
             playerLocomotion = GetComponent<PlayerLocomotion>();
             interactableUI = FindObjectOfType<InteractableUI>();
-            playerStats = GetComponent<PlayerStats>();
-            backstabCollider = GetComponentInChildren<BackstabCollider>();
         }
 
-        
+
         void Update()
         {
             float delta = Time.deltaTime;
+
             isInteracting = anim.GetBool("isInteracting");
             canDoCombo = anim.GetBool("canDoCombo");
             isUsingRightHand = anim.GetBool("isUsingRightHand");
-            isUsingRightHand = anim.GetBool("isUsingLeftHand");
+            isUsingLeftHand = anim.GetBool("isUsingLeftHand");
             isInvulnerable = anim.GetBool("isInvulnerable");
             anim.SetBool("isInAir", isInAir);
             anim.SetBool("isDead", playerStats.isDead);
 
             inputHandler.TickInput(delta);
+            playerAnimatorManager.canRotate = anim.GetBool("canRotate");
             playerLocomotion.HandleRollingAndSprinting(delta);
             playerLocomotion.HandleJumping();
             playerStats.RegenerateStamina();
+
             CheckForInteractableObject();
-            
         }
 
         private void FixedUpdate()
         {
             float delta = Time.fixedDeltaTime;
-            playerLocomotion.HandleMovement(delta);
-            //playerLocomotion.HandleRollingAndSprinting(delta);
+
             playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
-            //playerLocomotion.HandleJumping();
+            playerLocomotion.HandleMovement(delta);
+            playerLocomotion.HandleRotation(delta);
         }
 
         private void LateUpdate()
@@ -86,6 +85,7 @@ namespace CH
             inputHandler.inventory_Input = false;
 
             float delta = Time.deltaTime;
+
             if (cameraHandler != null)
             {
                 cameraHandler.FollowTarget(delta);
@@ -96,23 +96,25 @@ namespace CH
             {
                 playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
             }
-
         }
+
         public void CheckForInteractableObject()
         {
             RaycastHit hit;
-            if(Physics.SphereCast(transform.position, 0.3f, transform.forward, out hit, 1f))
+
+            if (Physics.SphereCast(transform.position, 0.3f, transform.forward, out hit, 1f))
             {
-                if(hit.collider.tag == "Interactable")
+                if (hit.collider.tag == "Interactable")
                 {
                     Interactable interactableObject = hit.collider.GetComponent<Interactable>();
-                    if(interactableObject != null)
+
+                    if (interactableObject != null)
                     {
-                        string interactabletext = interactableObject.interactibleText;
-                        interactableUI.interactableText.text = interactabletext;
+                        string interactableText = interactableObject.interactibleText;
+                        interactableUI.interactableText.text = interactableText;
                         interactableUIGameObject.SetActive(true);
 
-                        if(inputHandler.a_Input)
+                        if (inputHandler.a_Input)
                         {
                             hit.collider.GetComponent<Interactable>().Interact(this);
                         }
@@ -121,15 +123,18 @@ namespace CH
             }
             else
             {
-                if(interactableUIGameObject != null)
+                if (interactableUIGameObject != null)
                 {
                     interactableUIGameObject.SetActive(false);
                 }
-                if(itemInteractableGameObject != null && inputHandler.a_Input)
+
+                if (itemInteractableGameObject != null && inputHandler.a_Input)
                 {
                     itemInteractableGameObject.SetActive(false);
                 }
             }
         }
+
+
     }
 }

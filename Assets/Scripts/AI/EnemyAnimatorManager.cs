@@ -30,5 +30,15 @@ namespace CH
             Vector3 velocity = deltaPosition / delta;
             enemyManager.enemyRigidBody.velocity = velocity;
         }
+
+        public void CanRotate()
+        {
+            anim.SetBool("canRotate", true);
+        }
+
+        public void StopRotation()
+        {
+            anim.SetBool("canRotate", false);
+        }
     }
 }

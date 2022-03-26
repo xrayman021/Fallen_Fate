@@ -11,6 +11,7 @@ namespace CH
         WeaponSlotManager weaponSlotManager;
         PlayerManager playerManager;
         PlayerInventory playerInventory;
+        PlayerStats playerStats;
         public string lastAttack;
 
         LayerMask backstabLayer = 1 << 14;
@@ -24,11 +25,15 @@ namespace CH
             inputHandler = GetComponent<InputHandler>();
             playerManager = GetComponent<PlayerManager>();
             playerInventory = GetComponentInParent<PlayerInventory>();
+            playerStats = GetComponent<PlayerStats>();
         }
 
         public void HandleWeaponCombo(WeaponItem weapon)
         {
-            if(inputHandler.comboFlag)
+            if (playerStats.currentStamina <= 0)
+                return;
+
+            if (inputHandler.comboFlag)
             {
                 animatorHandler.anim.SetBool("canDoCombo", false);
 
@@ -48,6 +53,9 @@ namespace CH
 
         public void HandleLightAttack(WeaponItem weapon)
         {
+            if (playerStats.currentStamina <= 0)
+                return;
+
             weaponSlotManager.attackingWeapon = weapon;
 
             if (inputHandler.twoHandFlag)
@@ -65,6 +73,9 @@ namespace CH
 
         public void HandleHeavyAttack(WeaponItem weapon)
         {
+            if (playerStats.currentStamina <= 0)
+                return;
+
             weaponSlotManager.attackingWeapon = weapon;
             if (inputHandler.twoHandFlag)
             {
@@ -81,6 +92,9 @@ namespace CH
 
         public void AttemptBackstabOrRiposte()
         {
+            if (playerStats.currentStamina <= 0)
+                return;
+
             RaycastHit hit;
 
             if(Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position, 
