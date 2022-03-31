@@ -104,7 +104,7 @@ namespace CH
                 DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
                 if(enemyCharacterManager != null)
                 {
-                    playerManager.transform.position = enemyCharacterManager.backstabCollider.backStabberStandPoint.position;
+                    playerManager.transform.position = enemyCharacterManager.backstabCollider.criticalDamagerStandPosition.position;
                     Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
                     rotationDirection = hit.transform.position - playerManager.transform.position;
                     rotationDirection.y = 0;

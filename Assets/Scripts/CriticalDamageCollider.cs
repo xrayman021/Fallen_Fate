@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace CH
 {
-    public class BackstabCollider : MonoBehaviour
+    public class CriticalDamageCollider : MonoBehaviour
     {
-        public Transform backStabberStandPoint;
+        public Transform criticalDamagerStandPosition;
     }
 }

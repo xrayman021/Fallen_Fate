@@ -11,7 +11,8 @@ namespace CH
 
         [Header("Combat Colliders")]
         public BoxCollider backstabBoxCollider;
-        public BackstabCollider backstabCollider;
+        public CriticalDamageCollider backstabCollider;
+        public CriticalDamageCollider riposteCollider;
 
         public int pendingCriticalDamage;
     }

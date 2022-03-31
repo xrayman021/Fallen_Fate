@@ -35,7 +35,7 @@ namespace CH
             enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
             enemyAnimationManager = GetComponentInChildren<EnemyAnimatorManager>();
             enemyStats = GetComponent<EnemyStats>();
-            backstabCollider = GetComponentInChildren<BackstabCollider>();
+            backstabCollider = GetComponentInChildren<CriticalDamageCollider>();
             navMeshAgent = GetComponentInChildren<NavMeshAgent>();
             navMeshAgent.enabled = false;
         }

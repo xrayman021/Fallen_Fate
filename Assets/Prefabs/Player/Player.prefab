@@ -238,10 +238,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1084745874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03a28a1195a540f4ab02ae01e04e906e, type: 3}
+  m_Script: {fileID: 11500000, guid: f50f4f033274983488edfb0f7149d3a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backStabberStandPoint: {fileID: 1684602646}
+  criticalDamagerStandPosition: {fileID: 1684602646}
 --- !u!1 &1100116390
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,8 +497,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: {x: 0, y: 0, z: 0}
-  jumpForce: 250
-  jumpForceApplied: 0
   myTransform: {fileID: 0}
   animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
@@ -508,9 +506,11 @@ MonoBehaviour:
   groundDirectionRayDistance: 0.2
   inAirTimer: 0
   movementSpeed: 5
+  walkingSpeed: 1
   sprintSpeed: 5
   rotationSpeed: 10
   fallingSpeed: 75
+  rollStaminaCost: 15
   characterCollider: {fileID: 2316220535866251569}
   characterCollisionBlockerCollider: {fileID: 208212603}
 --- !u!114 &2316220535866251581
@@ -528,6 +528,7 @@ MonoBehaviour:
   lockOnTransform: {fileID: 828039858}
   backstabBoxCollider: {fileID: 0}
   backstabCollider: {fileID: 0}
+  riposteCollider: {fileID: 0}
   pendingCriticalDamage: 0
   interactableUIGameObject: {fileID: 0}
   itemInteractableGameObject: {fileID: 0}
