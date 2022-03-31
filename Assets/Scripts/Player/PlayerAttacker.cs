@@ -13,6 +13,7 @@ namespace CH
         PlayerInventory playerInventory;
         PlayerStats playerStats;
         public string lastAttack;
+        LayerMask riposteLayer = 1 << 15;
 
         LayerMask backstabLayer = 1 << 14;
 
@@ -104,6 +105,7 @@ namespace CH
                 DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
                 if(enemyCharacterManager != null)
                 {
+                    Debug.Log("Made it to backstab.");
                     playerManager.transform.position = enemyCharacterManager.backstabCollider.criticalDamagerStandPosition.position;
                     Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
                     rotationDirection = hit.transform.position - playerManager.transform.position;
@@ -121,6 +123,34 @@ namespace CH
 
 
                 }
+            }
+            else if (Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position,
+                transform.TransformDirection(Vector3.forward), out hit, 0.5f, riposteLayer))
+            {
+                Debug.Log("Made it to function");
+                CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
+                DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
+                Debug.Log("Made it to If statement");
+                if(enemyCharacterManager != null && enemyCharacterManager.canBeRiposted)
+                {
+                    Debug.Log("Made it to Riposte");
+                    playerManager.transform.position = enemyCharacterManager.riposteCollider.criticalDamagerStandPosition.position;
+
+                    Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
+                    rotationDirection = hit.transform.position - playerManager.transform.position;
+                    rotationDirection.Normalize();
+                    Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                    Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
+                    playerManager.transform.rotation = targetRotation;
+
+                    int criticalDamage = playerInventory.rightWeapon.criticalDamageMultiplier * rightWeapon.currentWeaponDamage;
+                    enemyCharacterManager.pendingCriticalDamage = criticalDamage;
+
+                    animatorHandler.PlayTargetAnimation("Riposte", true);
+                    enemyCharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Riposted", true);
+                    Debug.Log("Enemy Riposted.");
+                }
+                
             }
         }
     }

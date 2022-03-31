@@ -279,7 +279,9 @@ namespace CH
         {
             if(critical_Attack_Input)
             {
+                Debug.Log("Crit Hit");
                 critical_Attack_Input = false;
+                Debug.Log("Made it to Attack");
                 playerAttacker.AttemptBackstabOrRiposte();
             }
         }

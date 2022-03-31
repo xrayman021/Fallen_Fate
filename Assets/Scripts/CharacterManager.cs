@@ -10,9 +10,11 @@ namespace CH
         public Transform lockOnTransform;
 
         [Header("Combat Colliders")]
-        public BoxCollider backstabBoxCollider;
         public CriticalDamageCollider backstabCollider;
         public CriticalDamageCollider riposteCollider;
+
+        [Header("Combat Flags")]
+        public bool canBeRiposted = false;
 
         public int pendingCriticalDamage;
     }
