@@ -9,6 +9,8 @@ namespace CH
         //public HealthBar healthBar;
 
         Animator animator;
+        bool enemyDead;
+        CameraHandler cameraHandler;
 
 
 
@@ -17,6 +19,8 @@ namespace CH
             animator = GetComponentInChildren<Animator>();
             maxHealth = SetMaxHealthFromHealthLevel();
             currentHealth = maxHealth;
+            enemyDead = false;
+            cameraHandler = FindObjectOfType<CameraHandler>();
             //healthBar.SetMaxHealth(maxHealth);
         }
 
@@ -35,6 +39,11 @@ namespace CH
                 currentHealth = 0;
                 isDead = true;
                 //Handle enemy death
+                enemyDead = true;
+                if (enemyDead)
+                {
+                    Invoke(nameof(KillEnemy), .5f);
+                }
             }
         }
 
@@ -55,8 +64,20 @@ namespace CH
                 currentHealth = 0;
                 animator.Play("Dead_01");
                 isDead = true;
+                enemyDead = true;
+                if(enemyDead)
+                {
+                    Invoke(nameof(KillEnemy), .5f);
+                    cameraHandler.currentLockOnTarget = null;
+                }
                 //Handle enemy death
             }
+        }
+
+        public void KillEnemy()
+        {
+            Destroy(gameObject);
+            cameraHandler.ClearLockOnTargets();
         }
     }
 }

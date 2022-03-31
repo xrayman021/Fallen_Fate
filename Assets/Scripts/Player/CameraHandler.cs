@@ -91,20 +91,23 @@ namespace CH
             else
             {
                 float velocity = 0;
+                if(currentLockOnTarget != null)
+                {
+                    Vector3 dir = currentLockOnTarget.transform.position - transform.position;
+                    dir.Normalize();
+                    dir.y = 0;
+                    Quaternion targetRotation = Quaternion.LookRotation(dir);
+                    transform.rotation = targetRotation;
 
-                Vector3 dir = currentLockOnTarget.transform.position - transform.position;
-                dir.Normalize();
-                dir.y = 0;
-                Quaternion targetRotation = Quaternion.LookRotation(dir);
-                transform.rotation = targetRotation;
+                    dir = currentLockOnTarget.transform.position - cameraPivotTransform.position;
+                    dir.Normalize();
 
-                dir = currentLockOnTarget.transform.position - cameraPivotTransform.position;
-                dir.Normalize();
-
-                targetRotation = Quaternion.LookRotation(dir);
-                Vector3 eulerAngle = targetRotation.eulerAngles;
-                eulerAngle.y = 0;
-                cameraPivotTransform.localEulerAngles = eulerAngle;
+                    targetRotation = Quaternion.LookRotation(dir);
+                    Vector3 eulerAngle = targetRotation.eulerAngles;
+                    eulerAngle.y = 0;
+                    cameraPivotTransform.localEulerAngles = eulerAngle;
+                }
+                
             }
         }
 

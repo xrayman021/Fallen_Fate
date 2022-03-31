@@ -102,8 +102,9 @@ namespace CH
 
                         transform.rotation = targetRotation;
                     }
-                    else
+                    else if (cameraHandler.currentLockOnTarget != null)
                     {
+                        
                         Vector3 rotationDirection = moveDirection;
                         rotationDirection = cameraHandler.currentLockOnTarget.transform.position - transform.position;
                         rotationDirection.y = 0;
