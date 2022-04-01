@@ -29077,11 +29077,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566723657}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &567012871 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1100116391, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
-  m_PrefabInstance: {fileID: 2316220535443977669}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &572317572
 GameObject:
   m_ObjectHideFlags: 0
@@ -41134,7 +41129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777192054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.215, z: 0.389}
+  m_LocalPosition: {x: 0, y: 1.215, z: 0.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 334103400}
@@ -41164,8 +41159,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.571206, y: 1.8684068, z: 3.765863}
-  m_Center: {x: 0.31957006, y: -0.3746717, z: 1.6230054}
+  m_Size: {x: 1.2023771, y: 1.3000355, z: 2.8781989}
+  m_Center: {x: 0.045167774, y: -0.27192187, z: 1.1791718}
 --- !u!1 &778298091
 GameObject:
   m_ObjectHideFlags: 0
@@ -48027,11 +48022,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890284230}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &890716985 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 247569740, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
-  m_PrefabInstance: {fileID: 2316220535443977669}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &891006119
 GameObject:
   m_ObjectHideFlags: 0
@@ -74430,64 +74420,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1499442388
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1499442389}
-  - component: {fileID: 1499442391}
-  - component: {fileID: 1499442390}
-  m_Layer: 15
-  m_Name: Riposte Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1499442389
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499442388}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.331, z: -0.285}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 567012871}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1499442390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499442388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f50f4f033274983488edfb0f7149d3a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  criticalDamagerStandPosition: {fileID: 1673323482}
---- !u!65 &1499442391
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499442388}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.49841404, y: 1.1258535, z: 0.040332615}
-  m_Center: {x: 0.044616222, y: -0.2008158, z: 0.4798338}
 --- !u!1 &1505179660
 GameObject:
   m_ObjectHideFlags: 0
@@ -83875,36 +83807,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667837861}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1673323481
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1673323482}
-  m_Layer: 13
-  m_Name: Riposter Standing Position
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1673323482
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1673323481}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.566}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 890716985}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673448236
 GameObject:
   m_ObjectHideFlags: 0
@@ -86922,17 +86824,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719793133}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1721397258 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1084745877, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
-  m_PrefabInstance: {fileID: 2316220535443977669}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f50f4f033274983488edfb0f7149d3a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1724165859
 GameObject:
   m_ObjectHideFlags: 0
@@ -108345,10 +108236,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1084745876, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2316220535866251574, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -108397,14 +108284,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2316220535866251581, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
-      propertyPath: riposteCollider
-      value: 
-      objectReference: {fileID: 1499442390}
-    - target: {fileID: 2316220535866251581, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
-      propertyPath: backstabCollider
-      value: 
-      objectReference: {fileID: 1721397258}
     - target: {fileID: 2316220535866251581, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: interactableUIGameObject
       value: 
