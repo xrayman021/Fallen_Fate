@@ -14,7 +14,7 @@ namespace CH
         public CriticalDamageCollider riposteCollider;
 
         [Header("Combat Flags")]
-        public bool canBeRiposted = false;
+        public bool canBeRiposted;
 
         public int pendingCriticalDamage;
     }

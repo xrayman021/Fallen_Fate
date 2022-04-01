@@ -13,11 +13,8 @@ namespace CH
         PlayerInventory playerInventory;
         PlayerStats playerStats;
         public string lastAttack;
-        LayerMask riposteLayer = 1 << 15;
-
         LayerMask backstabLayer = 1 << 14;
-
-
+        LayerMask riposteLayer = 1 << 15;
 
         private void Start()
         {
@@ -125,19 +122,20 @@ namespace CH
                 }
             }
             else if (Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position,
-                transform.TransformDirection(Vector3.forward), out hit, 0.5f, riposteLayer))
+                transform.TransformDirection(Vector3.forward), out hit, 0.7f, riposteLayer))
             {
                 Debug.Log("Made it to function");
                 CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
                 DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
                 Debug.Log("Made it to If statement");
-                if(enemyCharacterManager != null && enemyCharacterManager.canBeRiposted)
+                if(enemyCharacterManager.canBeRiposted)
                 {
                     Debug.Log("Made it to Riposte");
                     playerManager.transform.position = enemyCharacterManager.riposteCollider.criticalDamagerStandPosition.position;
 
                     Vector3 rotationDirection = playerManager.transform.root.eulerAngles;
                     rotationDirection = hit.transform.position - playerManager.transform.position;
+                    rotationDirection.y = 0;
                     rotationDirection.Normalize();
                     Quaternion tr = Quaternion.LookRotation(rotationDirection);
                     Quaternion targetRotation = Quaternion.Slerp(playerManager.transform.rotation, tr, 500 * Time.deltaTime);
