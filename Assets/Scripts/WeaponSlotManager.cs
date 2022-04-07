@@ -110,7 +110,11 @@ namespace CH
         private void LoadLeftWeaponDamageCollider()
         {
             leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-            leftHandDamageCollider.currentWeaponDamage = playerInventory.leftWeapon.baseDamage;
+            if(leftHandDamageCollider != null)
+            {
+                leftHandDamageCollider.currentWeaponDamage = playerInventory.leftWeapon.baseDamage;
+            }
+            
         }
 
         private void LoadRighttWeaponDamageCollider()
@@ -135,7 +139,11 @@ namespace CH
         public void CloseDamageCollider()
         {
             rightHandDamageCollider.DisableDamageCollider();
-            leftHandDamageCollider.DisableDamageCollider();
+            if(leftHandDamageCollider != null)
+            {
+                leftHandDamageCollider.DisableDamageCollider();
+
+            }
         }
         
 

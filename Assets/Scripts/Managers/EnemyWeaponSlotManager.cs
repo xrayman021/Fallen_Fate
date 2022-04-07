@@ -15,8 +15,11 @@ namespace CH
         DamageCollider leftHandDamageCollider;
         DamageCollider rightHandDamageCollider;
 
+        //public CharacterManager characterManager;
+
         private void Awake()
         {
+            //characterManager = GetComponentInParent<CharacterManager>();
             WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
             foreach (WeaponHolderSlot weaponSlot in weaponHolderSlots)
             {
@@ -69,10 +72,15 @@ namespace CH
             if (isLeft)
             {
                 leftHandDamageCollider = leftHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+                if(leftHandDamageCollider != null)
+                {
+                    leftHandDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
+                }
             }
             else
             {
                 rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
+                rightHandDamageCollider.characterManager = GetComponentInParent<CharacterManager>();
             }
         }
         public void OpenDamageCollider()

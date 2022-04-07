@@ -100,20 +100,20 @@ namespace CH
             }
         }
 
-        private void PerformLTWeaponArt(bool isLeftWeapon)
+        private void PerformLTWeaponArt(bool isTwoHanding)
         {
             if(playerManager.isInteracting)
             {
                 return;
             }
 
-            if(isLeftWeapon)
+            if(isTwoHanding)
             {
-                animatorHandler.PlayTargetAnimation(playerInventory.leftWeapon.weapon_art, true);
+
             }
             else
             {
-
+                animatorHandler.PlayTargetAnimation(playerInventory.leftWeapon.weapon_art, true);
             }
         }
 
