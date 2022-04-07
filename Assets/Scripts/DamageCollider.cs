@@ -25,7 +25,10 @@ namespace CH
 
         public void DisableDamageCollider()
         {
-            damageCollider.enabled = false;
+            if(damageCollider != null)
+            {
+                damageCollider.enabled = false;
+            }
         }
 
         private void OnTriggerEnter(Collider collision)

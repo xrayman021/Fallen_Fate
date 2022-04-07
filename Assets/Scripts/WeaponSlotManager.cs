@@ -72,8 +72,9 @@ namespace CH
             }
             else
             {
-                if(inputHandler.twoHandFlag)
+                if(inputHandler.twoHandFlag && leftHandSlot != null)
                 {
+                    
                     backSlot.LoadWeaponModel(leftHandSlot.currentWeapon);
                     leftHandSlot.UnloadWeaponAndDestroy();
                     animator.CrossFade(weaponItem.th_idle, 0.2f);

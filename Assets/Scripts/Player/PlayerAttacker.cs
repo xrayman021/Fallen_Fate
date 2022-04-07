@@ -122,12 +122,13 @@ namespace CH
                 }
             }
             else if (Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position,
-                transform.TransformDirection(Vector3.forward), out hit, 0.7f, riposteLayer))
+                transform.TransformDirection(Vector3.forward), out hit, 5f, riposteLayer))
             {
                 Debug.Log("Made it to function");
                 CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
                 DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
                 Debug.Log("Made it to If statement");
+                Debug.Log(enemyCharacterManager.canBeRiposted);
                 if(enemyCharacterManager.canBeRiposted)
                 {
                     Debug.Log("Made it to Riposte");
