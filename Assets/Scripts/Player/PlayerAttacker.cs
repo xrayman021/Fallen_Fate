@@ -88,6 +88,35 @@ namespace CH
             
         }
 
+        public void HandleLTAction()
+        {
+            if(playerInventory.leftWeapon.isShieldWeapon)
+            {
+                PerformLTWeaponArt(inputHandler.twoHandFlag);
+            }
+            else if(playerInventory.leftWeapon.isMeleeWeapon)
+            {
+
+            }
+        }
+
+        private void PerformLTWeaponArt(bool isLeftWeapon)
+        {
+            if(playerManager.isInteracting)
+            {
+                return;
+            }
+
+            if(isLeftWeapon)
+            {
+                animatorHandler.PlayTargetAnimation(playerInventory.leftWeapon.weapon_art, true);
+            }
+            else
+            {
+
+            }
+        }
+
         public void AttemptBackstabOrRiposte()
         {
             if (playerStats.currentStamina <= 0)
@@ -152,5 +181,7 @@ namespace CH
                 
             }
         }
+
+
     }
 }

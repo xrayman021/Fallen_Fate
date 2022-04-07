@@ -324,6 +324,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "LT",
+                    "type": "Button",
+                    "id": "a23e9eb8-30ce-45ad-af2c-fdb237cf6e00",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -599,6 +607,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Critical Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63100249-fda9-42cc-84d6-3257a7d94aa8",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "03cf153f-3a26-48cb-a9c0-5be7014d7de3",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LT",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

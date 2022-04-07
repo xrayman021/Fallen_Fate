@@ -337,6 +337,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""LT"",
+                    ""type"": ""Button"",
+                    ""id"": ""a23e9eb8-30ce-45ad-af2c-fdb237cf6e00"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -614,6 +622,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Critical Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""63100249-fda9-42cc-84d6-3257a7d94aa8"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03cf153f-3a26-48cb-a9c0-5be7014d7de3"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LT"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -641,6 +671,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions_LockOn = m_PlayerActions.FindAction("LockOn", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
         m_PlayerActions_Y = m_PlayerActions.FindAction("Y", throwIfNotFound: true);
+        m_PlayerActions_LT = m_PlayerActions.FindAction("LT", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -760,6 +791,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerActions_LockOn;
     private readonly InputAction m_PlayerActions_Jump;
     private readonly InputAction m_PlayerActions_Y;
+    private readonly InputAction m_PlayerActions_LT;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -777,6 +809,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @LockOn => m_Wrapper.m_PlayerActions_LockOn;
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
         public InputAction @Y => m_Wrapper.m_PlayerActions_Y;
+        public InputAction @LT => m_Wrapper.m_PlayerActions_LT;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -825,6 +858,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Y.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnY;
                 @Y.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnY;
                 @Y.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnY;
+                @LT.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLT;
+                @LT.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLT;
+                @LT.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLT;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -868,6 +904,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Y.started += instance.OnY;
                 @Y.performed += instance.OnY;
                 @Y.canceled += instance.OnY;
+                @LT.started += instance.OnLT;
+                @LT.performed += instance.OnLT;
+                @LT.canceled += instance.OnLT;
             }
         }
     }
@@ -894,5 +933,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnLockOn(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnY(InputAction.CallbackContext context);
+        void OnLT(InputAction.CallbackContext context);
     }
 }
