@@ -66394,6 +66394,8 @@ MonoBehaviour:
   backstabCollider: {fileID: 1918158152}
   riposteCollider: {fileID: 777192056}
   canBeRiposted: 1
+  canBeParried: 1
+  isParrying: 0
   pendingCriticalDamage: 0
   navMeshAgent: {fileID: 0}
   enemyRigidBody: {fileID: 1350947974}
@@ -108308,6 +108310,22 @@ PrefabInstance:
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 2080330149}
+    - target: {fileID: 2316220536730289170, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220536730289181, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.249
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220536730289181, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.116
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316220536730289181, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.049
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
 --- !u!1001 &6941193907012402650

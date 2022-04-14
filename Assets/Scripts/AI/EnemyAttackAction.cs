@@ -13,7 +13,7 @@ namespace CH
         public float maximumAttackAngle = 35;
         public float minimumAttackAngle = -35;
 
-        public float minimumDistanceNeededToAttack = 0;
+        public float minimumDistanceNeededToAttack = 1;
         public float maximumDistanceNeededToAttack = 3;
     }
 }
