@@ -10,6 +10,9 @@ namespace CH
 
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
+            if (enemyManager.isInteracting)
+                return this;
+
             //Chase the target.
             //If within attack range, switch to combat stance state.
 
