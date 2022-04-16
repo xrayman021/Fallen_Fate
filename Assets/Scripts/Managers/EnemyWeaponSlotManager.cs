@@ -90,7 +90,7 @@ namespace CH
 
         public void CloseDamageCollider()
         {
-            rightHandDamageCollider.EnableDamageCollider();
+            rightHandDamageCollider.DisableDamageCollider();
         }
 
         public void DrainStaminaLightAttack()
