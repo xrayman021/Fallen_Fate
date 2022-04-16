@@ -153,8 +153,6 @@ namespace CH
 
         private void HandleAttackInput(float delta)
         {
-            
-
             //RB handles the right hand weapon's light attacks
             if(rb_Input)
             {

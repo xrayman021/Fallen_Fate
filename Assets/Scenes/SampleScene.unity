@@ -66393,8 +66393,8 @@ MonoBehaviour:
   lockOnTransform: {fileID: 1544678048}
   backstabCollider: {fileID: 1918158152}
   riposteCollider: {fileID: 777192056}
-  canBeRiposted: 1
-  canBeParried: 1
+  canBeRiposted: 0
+  canBeParried: 0
   isParrying: 0
   pendingCriticalDamage: 0
   navMeshAgent: {fileID: 0}

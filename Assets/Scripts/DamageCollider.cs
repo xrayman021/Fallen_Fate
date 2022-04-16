@@ -41,8 +41,10 @@ namespace CH
 
                 if(enemyCharacterManager != null)
                 {
+                    
                     if(enemyCharacterManager.isParrying)
                     {
+                        Debug.Log("Enemy Parrying: " + enemyCharacterManager.isParrying);
                         enemyCharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Parried", true);
                         return;
                     }
@@ -63,6 +65,7 @@ namespace CH
                 {
                     if (enemyCharacterManager.isParrying)
                     {
+                        Debug.Log("Enemy Parrying: " + enemyCharacterManager.isParrying);
                         enemyCharacterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Parried", true);
                         return;
                     }
