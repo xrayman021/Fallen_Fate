@@ -7,6 +7,8 @@ namespace CH
     [CreateAssetMenu(menuName = "AI/Enemy Actions/Attack Action")]
     public class EnemyAttackAction : EnemyActions
     {
+        public bool canCombo;
+
         public int attackScore = 3;
         public float recoveryTime = 2;
 

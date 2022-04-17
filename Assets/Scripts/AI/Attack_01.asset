@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Attack_01
   m_EditorClassIdentifier: 
   actionAnimation: OH_Light_Attack_01
+  canCombo: 1
   attackScore: 3
   recoveryTime: 2
   maximumAttackAngle: 35
