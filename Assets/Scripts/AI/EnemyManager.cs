@@ -23,6 +23,9 @@ namespace CH
         public float rotationSpeed = 15;
         //public float maximumAttackRange = 1.5f;
 
+        [Header("Combat Flags")]
+        public bool canDoCombo;
+
         [Header("A.I Settings")]
         public float detectionRadius = 20;
         //The higher, and lower, respectively these angles are, the greater detection FIELD OF VIEW (basically like eye sight)
@@ -47,13 +50,18 @@ namespace CH
         private void Update()
         {
             HandleRecoveryTimer();
+            HandleStateMachine();
+
             isInteracting = enemyAnimationManager.anim.GetBool("isInteracting");
+            canDoCombo = enemyAnimationManager.anim.GetBool("canDoCombo");
             enemyAnimationManager.anim.SetBool("isDead", enemyStats.isDead);
         }
 
-        private void FixedUpdate()
+        private void LateUpdate()
         {
-            HandleStateMachine();
+            
+            navMeshAgent.transform.localPosition = Vector3.zero;
+            navMeshAgent.transform.localRotation = Quaternion.identity;
         }
 
         private void HandleStateMachine()

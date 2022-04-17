@@ -8,6 +8,7 @@ namespace CH
     public class EnemyAttackAction : EnemyActions
     {
         public bool canCombo;
+        public EnemyAttackAction comboAction;
 
         public int attackScore = 3;
         public float recoveryTime = 2;

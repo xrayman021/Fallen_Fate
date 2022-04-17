@@ -35,8 +35,7 @@ namespace CH
             }
 
             HandleRotateTowardsTarget(enemyManager);
-            enemyManager.navMeshAgent.transform.localPosition = Vector3.zero;
-            enemyManager.navMeshAgent.transform.localRotation = Quaternion.identity;
+
 
             if(distanceFromTarget <= enemyManager.maximumAttackRange)
             {

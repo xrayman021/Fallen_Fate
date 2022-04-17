@@ -10,10 +10,24 @@ namespace CH
 
         public EnemyAttackAction[] enemyAttacks;
         public EnemyAttackAction currentAttack;
+
+        bool isComboing = false;
+
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
-            if (enemyManager.isInteracting)
+            if (enemyManager.isInteracting && enemyManager.canDoCombo == false)
+            {
                 return this;
+            }
+            else if(enemyManager.isInteracting && enemyManager.canDoCombo == false)
+            {
+                if (isComboing)
+                {
+                    enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
+                    isComboing = false;
+                }
+            }
+                
 
             Vector3 targetDirection = enemyManager.currentTarget.transform.position - transform.position;
             float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
@@ -22,9 +36,12 @@ namespace CH
             HandleRotateTowardsTarget(enemyManager);
 
             if (enemyManager.isPerformingAction)
+            {
                 return combatStanceState;
+            }
+                
 
-            if(currentAttack != null)
+            if (currentAttack != null)
             {
                 //If too close to enemy to do current attack, get new attack.
                 if(distanceFromTarget < currentAttack.minimumDistanceNeededToAttack)
@@ -36,15 +53,25 @@ namespace CH
                     if(viewableAngle <= currentAttack.maximumAttackAngle &&
                         viewableAngle >= currentAttack.minimumAttackAngle)
                     {
-                        if(enemyManager.currentRecoveryTime <= 0 && enemyManager.isPerformingAction == false)
+                        if (enemyManager.currentRecoveryTime <= 0 && enemyManager.isPerformingAction == false)
                         {
                             enemyAnimatorManager.anim.SetFloat("Vertical", 0, 0.1f, Time.deltaTime);
                             enemyAnimatorManager.anim.SetFloat("Horizontal", 0, 0.1f, Time.deltaTime);
                             enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
                             enemyManager.isPerformingAction = true;
-                            enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
-                            currentAttack = null;
-                            return combatStanceState;
+
+                            if (currentAttack.canCombo)
+                            {
+                                currentAttack = currentAttack.comboAction;
+                                return this;
+                            }
+                            else
+                            {
+                                enemyManager.currentRecoveryTime = currentAttack.recoveryTime;
+                                currentAttack = null;
+                                return combatStanceState;
+                            }
+                            
                         }
                     }
                 }
