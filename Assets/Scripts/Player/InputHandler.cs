@@ -80,6 +80,7 @@ namespace CH
                 inputActions.PlayerActions.RT.performed += i => rt_Input = true;
                 inputActions.PlayerActions.LT.performed += i => lt_Input = true;
                 inputActions.PlayerActions.LB.performed += i => lb_Input = true;
+                inputActions.PlayerActions.LB.canceled += i => lb_Input = false;
                 inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
                 inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
                 inputActions.PlayerActions.A.performed += i => a_Input = true;
@@ -182,11 +183,6 @@ namespace CH
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
             }
 
-            if(lb_Input)
-            {
-                //Do a block
-            }
-
             if(lt_Input)
             {
                 if(twoHandFlag)
@@ -197,6 +193,16 @@ namespace CH
                 {
                     playerAttacker.HandleLTAction();
                 }
+            }
+
+            if (lb_Input)
+            {
+                playerManager.isBlocking = true;
+                playerAttacker.HandleLBAction();
+            }
+            else
+            {
+                playerManager.isBlocking = false;
             }
 
         }

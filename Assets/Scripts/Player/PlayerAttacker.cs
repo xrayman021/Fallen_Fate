@@ -88,6 +88,11 @@ namespace CH
             
         }
 
+        public void HandleLBAction()
+        {
+            PerformLBBlockingAction();
+        }
+
         public void HandleLTAction()
         {
             if(playerInventory.leftWeapon.isShieldWeapon)
@@ -182,6 +187,17 @@ namespace CH
             }
         }
 
+        #region Defense Actions
+
+        private void PerformLBBlockingAction()
+        {
+            if (playerManager.isInteracting)
+                return;
+
+            animatorHandler.PlayTargetAnimation("Block_Start", false);
+        }
+
+        #endregion
 
     }
 }
