@@ -17,6 +17,7 @@ namespace CH
         public bool y_Input;
         public bool rb_Input;
         public bool rt_Input;
+        public bool lb_Input;
         public bool lt_Input;
         public bool critical_Attack_Input;
         public bool jump_Input;
@@ -78,6 +79,7 @@ namespace CH
                 inputActions.PlayerActions.RB.performed += i => rb_Input = true;
                 inputActions.PlayerActions.RT.performed += i => rt_Input = true;
                 inputActions.PlayerActions.LT.performed += i => lt_Input = true;
+                inputActions.PlayerActions.LB.performed += i => lb_Input = true;
                 inputActions.PlayerActions.DPadRight.performed += i => d_Pad_Right = true;
                 inputActions.PlayerActions.DPadLeft.performed += i => d_Pad_Left = true;
                 inputActions.PlayerActions.A.performed += i => a_Input = true;
@@ -103,7 +105,7 @@ namespace CH
         {
             HandleMoveInput(delta);
             HandleRollInput(delta);
-            HandleAttackInput(delta);
+            HandleCombatInput(delta);
             HandleQuickSlotsInput();
             //HandleInteractableInput();
             //HandleJumpInput();
@@ -151,7 +153,7 @@ namespace CH
             }
         }
 
-        private void HandleAttackInput(float delta)
+        private void HandleCombatInput(float delta)
         {
             //RB handles the right hand weapon's light attacks
             if(rb_Input)
@@ -178,6 +180,11 @@ namespace CH
             if(rt_Input)
             {
                 playerAttacker.HandleHeavyAttack(playerInventory.rightWeapon);
+            }
+
+            if(lb_Input)
+            {
+                //Do a block
             }
 
             if(lt_Input)

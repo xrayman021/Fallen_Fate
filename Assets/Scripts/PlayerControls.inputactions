@@ -246,6 +246,14 @@
                     "interactions": ""
                 },
                 {
+                    "name": "LB",
+                    "type": "Button",
+                    "id": "e8ac8668-cb12-4e0a-86fb-c41969b67cc0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
                     "name": "Critical Attack",
                     "type": "PassThrough",
                     "id": "79cecb23-ff63-4136-8dc5-5050e317892f",
@@ -629,6 +637,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "LT",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ee0d1b6c-0863-4e0a-9d79-d3eb58f95c2f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3c11e291-562a-416b-90a2-439d2816ddfb",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LB",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
