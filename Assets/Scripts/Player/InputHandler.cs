@@ -197,7 +197,6 @@ namespace CH
 
             if (lb_Input)
             {
-                playerManager.isBlocking = true;
                 playerAttacker.HandleLBAction();
             }
             else

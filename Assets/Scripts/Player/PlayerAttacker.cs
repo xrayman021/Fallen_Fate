@@ -194,7 +194,11 @@ namespace CH
             if (playerManager.isInteracting)
                 return;
 
-            animatorHandler.PlayTargetAnimation("Block_Start", false);
+            if (playerManager.isBlocking)
+                return;
+
+            animatorHandler.PlayTargetAnimation("Block_Start", false, true);
+            playerManager.isBlocking = true;
         }
 
         #endregion
