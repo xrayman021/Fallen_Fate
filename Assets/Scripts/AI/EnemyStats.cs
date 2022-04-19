@@ -12,16 +12,18 @@ namespace CH
         bool enemyDead;
         CameraHandler cameraHandler;
 
+        public UIEnemyHealthBar enemyHealthBar;
+
 
 
         void Start()
         {
             animator = GetComponentInChildren<Animator>();
             maxHealth = SetMaxHealthFromHealthLevel();
-            currentHealth = maxHealth;
             enemyDead = false;
             cameraHandler = FindObjectOfType<CameraHandler>();
-            //healthBar.SetMaxHealth(maxHealth);
+            currentHealth = maxHealth;
+            enemyHealthBar.SetMaxHealth(maxHealth);
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -33,6 +35,8 @@ namespace CH
         public void TakeDamageNoAnimation(int damage)
         {
             currentHealth = currentHealth - damage;
+
+            enemyHealthBar.SetMaxHealth(currentHealth);
 
             if (currentHealth <= 0)
             {
@@ -55,6 +59,7 @@ namespace CH
             }
 
             currentHealth = currentHealth - damage;
+            enemyHealthBar.SetMaxHealth(currentHealth);
             Debug.Log("Enemy was hit");
             //healthBar.SetCurrentHealth(currentHealth);
             animator.Play(damageAnimation);
