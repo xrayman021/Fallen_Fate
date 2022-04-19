@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: 
   maxItemAmount: 0
   currentItemAmount: 0
-  itemModel: {fileID: 0}
+  itemModel: {fileID: 7792557344715708942, guid: d56a95e7c989f4f4b9b6dfadee411a87, type: 3}
   consumeAnimation: 
   isInteracting: 0
   estusFlask: 0
