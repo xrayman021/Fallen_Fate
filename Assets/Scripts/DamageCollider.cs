@@ -55,6 +55,7 @@ namespace CH
                         if(playerStats != null)
                         {
                             playerStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Guard");
+                            return;
                         }
                     }
                 }

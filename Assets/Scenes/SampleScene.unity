@@ -37980,6 +37980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf55bc451f91634419d0fe98c8bf832c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockingPhysicalDamageAbsorption: 0
 --- !u!1 &728380128
 GameObject:
   m_ObjectHideFlags: 0
@@ -58664,6 +58665,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1141579442}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1141667418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3235193804384115939, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+  m_PrefabInstance: {fileID: 2316220535443977669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1141667419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141667418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24d798ad4d10104a8bc308e86ac6283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1143840821
 GameObject:
   m_ObjectHideFlags: 0
@@ -66453,6 +66471,7 @@ MonoBehaviour:
   canBeRiposted: 0
   canBeParried: 0
   isParrying: 0
+  isBlocking: 0
   pendingCriticalDamage: 0
   navMeshAgent: {fileID: 0}
   enemyRigidBody: {fileID: 1350947974}
