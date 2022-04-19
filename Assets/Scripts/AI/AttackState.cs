@@ -11,7 +11,7 @@ namespace CH
         public EnemyAttackAction[] enemyAttacks;
         public EnemyAttackAction currentAttack;
 
-        bool isComboing = false;
+        bool willDoComboOnNextAttack = false;
 
         public override State Tick(EnemyManager enemyManager, EnemyStats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
         {
@@ -21,10 +21,10 @@ namespace CH
             }
             else if(enemyManager.isInteracting && enemyManager.canDoCombo == false)
             {
-                if (isComboing)
+                if (willDoComboOnNextAttack)
                 {
+                    willDoComboOnNextAttack = false;
                     enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
-                    isComboing = false;
                 }
             }
                 
@@ -59,8 +59,9 @@ namespace CH
                             enemyAnimatorManager.anim.SetFloat("Horizontal", 0, 0.1f, Time.deltaTime);
                             enemyAnimatorManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
                             enemyManager.isPerformingAction = true;
+                            RollForComboChance(enemyManager);
 
-                            if (currentAttack.canCombo)
+                            if (currentAttack.canCombo && willDoComboOnNextAttack)
                             {
                                 currentAttack = currentAttack.comboAction;
                                 return this;
@@ -166,5 +167,16 @@ namespace CH
             }
 
         }
+
+        private void RollForComboChance(EnemyManager enemyManager)
+        {
+            float comboChance = Random.Range(0, 100);
+
+            if(enemyManager.allowAIToPerformCombos && comboChance <= enemyManager.comboLikelihood)
+            {
+                willDoComboOnNextAttack = true;
+            }
+        }
+
     }
 }

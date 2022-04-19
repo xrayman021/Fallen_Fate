@@ -33,6 +33,10 @@ namespace CH
         public float minimumDetectionAngle = -50;
         public float currentRecoveryTime = 0;
 
+        [Header("AI Combat Settings")]
+        public bool allowAIToPerformCombos;
+        public float comboLikelihood;
+
         private void Awake()
         {
             enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
