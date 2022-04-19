@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConsumableItem : MonoBehaviour
+namespace CH
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ConsumableItem : Item
     {
-        
-    }
+        [Header("Item Quantity")]
+        public int maxItemAmount;
+        public int currentItemAmount;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [Header("Item Model")]
+        public GameObject itemModel;
+
+        [Header("Animations")]
+        public string consumeAnimation;
+        public bool isInteracting;
+
+        public virtual void AttemptToConsumeItem(PlayerAnimatorManager playerAnimatorManager)
+        {
+            if(currentItemAmount > 0)
+            {
+                playerAnimatorManager.PlayTargetAnimation(consumeAnimation, isInteracting);
+            }
+            else
+            {
+                playerAnimatorManager.PlayTargetAnimation("Estusless", true);
+            }
+        }
+
     }
 }
