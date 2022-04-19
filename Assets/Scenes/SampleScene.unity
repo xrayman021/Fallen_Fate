@@ -109392,6 +109392,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 4b5ad8039c9c70f46a919aa4a0b8435c, type: 2}
     - target: {fileID: 2316220535866251580, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: currentConsumable
+      value: 
+      objectReference: {fileID: 11400000, guid: cbda17ca504a9bb41a4fb84ee949c2d1, type: 2}
+    - target: {fileID: 2316220535866251580, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: weaponsInLeftHandSlots.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 4b5ad8039c9c70f46a919aa4a0b8435c, type: 2}

@@ -10,6 +10,7 @@ namespace CH
 
         public WeaponItem rightWeapon;
         public WeaponItem leftWeapon;
+        public ConsumableItem currentConsumable;
 
         public WeaponItem unarmedWeapon;
 

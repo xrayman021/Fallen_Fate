@@ -21,7 +21,7 @@ namespace CH
         {
             if(currentItemAmount > 0)
             {
-                playerAnimatorManager.PlayTargetAnimation(consumeAnimation, isInteracting);
+                playerAnimatorManager.PlayTargetAnimation(consumeAnimation, isInteracting, true);
             }
             else
             {

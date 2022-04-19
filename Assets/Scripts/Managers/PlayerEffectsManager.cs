@@ -22,7 +22,7 @@ namespace CH
         {
             playerStats.HealPlayer(amountToBeHealed);
             GameObject healParticles = Instantiate(currentParticleFX, playerStats.transform);
-            Destroy(instantiatedFXModel);
+            Destroy(instantiatedFXModel.gameObject);
             weaponSlotManager.LoadBothWeaponsOnSlot();
         }
     }

@@ -48,12 +48,14 @@ namespace CH
         PlayerAttacker playerAttacker;
         PlayerInventory playerInventory;
         PlayerManager playerManager;
+        PlayerEffectsManager playerEffectsManager;
         PlayerStats playerStats;
         BlockingCollider blockingCollider;
         CameraHandler cameraHandler;
         PlayerAnimatorManager animatorHandler;
         UIManager uiManager;
         WeaponSlotManager weaponSlotManager;
+        PlayerAnimatorManager playerAnimatorManager;
 
         Vector2 movementInput;
         Vector2 cameraInput;
@@ -63,12 +65,14 @@ namespace CH
             playerAttacker = GetComponent<PlayerAttacker>();
             playerInventory = GetComponent<PlayerInventory>();
             playerManager = GetComponent<PlayerManager>();
+            playerEffectsManager = GetComponentInChildren<PlayerEffectsManager>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             blockingCollider = GetComponentInChildren<BlockingCollider>();
             uiManager = FindObjectOfType<UIManager>();
             cameraHandler = FindObjectOfType<CameraHandler>();
             animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
             playerStats = GetComponent<PlayerStats>();
+            playerAnimatorManager = GetComponentInChildren<PlayerAnimatorManager>();
         }
 
 
@@ -326,7 +330,7 @@ namespace CH
             if(x_Input)
             {
                 x_Input = false;
-                //USE CURRENT CONSUMABLE
+                playerInventory.currentConsumable.AttemptToConsumeItem(playerAnimatorManager, weaponSlotManager, playerEffectsManager);
             }
         }
 
