@@ -47,7 +47,7 @@ namespace CH
             }
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, string damageAnimation = "Damage_01")
         {
             if (isDead)
             {
@@ -57,7 +57,7 @@ namespace CH
             currentHealth = currentHealth - damage;
             Debug.Log("Enemy was hit");
             //healthBar.SetCurrentHealth(currentHealth);
-            animator.Play("Damage_01");
+            animator.Play(damageAnimation);
 
             if (currentHealth <= 0)
             {

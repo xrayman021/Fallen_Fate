@@ -7,6 +7,7 @@ namespace CH
     public class PlayerAttacker : MonoBehaviour
     {
         PlayerAnimatorManager animatorHandler;
+        PlayerEquipmentManager playerEquipmentManager;
         InputHandler inputHandler;
         WeaponSlotManager weaponSlotManager;
         PlayerManager playerManager;
@@ -19,6 +20,7 @@ namespace CH
         private void Start()
         {
             animatorHandler = GetComponentInChildren<PlayerAnimatorManager>();
+            playerEquipmentManager = GetComponentInChildren<PlayerEquipmentManager>();
             weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
             inputHandler = GetComponent<InputHandler>();
             playerManager = GetComponent<PlayerManager>();
@@ -198,6 +200,7 @@ namespace CH
                 return;
 
             animatorHandler.PlayTargetAnimation("Block_Start", false, true);
+            playerEquipmentManager.OpenBlockingCollider();
             playerManager.isBlocking = true;
         }
 
