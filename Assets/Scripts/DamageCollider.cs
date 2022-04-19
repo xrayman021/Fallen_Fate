@@ -38,6 +38,7 @@ namespace CH
             {
                 PlayerStats playerStats = collision.GetComponent<PlayerStats>();
                 CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
+                BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
 
                 if(enemyCharacterManager != null)
                 {
@@ -47,6 +48,14 @@ namespace CH
                         Debug.Log("Enemy Parrying: " + enemyCharacterManager.isParrying);
                         characterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Parried", true);
                         return;
+                    }
+                    else if(shield != null && enemyCharacterManager.isBlocking)
+                    {
+                        float physicalDamageAfterBlock = currentWeaponDamage - (currentWeaponDamage * shield.blockingPhysicalDamageAbsorption) / 100;
+                        if(playerStats != null)
+                        {
+                            playerStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Guard");
+                        }
                     }
                 }
 

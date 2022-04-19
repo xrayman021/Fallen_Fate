@@ -2,17 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockingCollider : MonoBehaviour
+namespace CH
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BlockingCollider : MonoBehaviour
     {
-        
-    }
+        BoxCollider blockingCollider;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public float blockingPhysicalDamageAbsorption;
+
+        private void Awake()
+        {
+            blockingCollider = GetComponent<BoxCollider>();
+        }
+
+        public void SetColliderDamageAbsorption(WeaponItem weapon)
+        {
+            if(weapon != null)
+            {
+                blockingPhysicalDamageAbsorption = weapon.physicalDamageAbsorption;
+            }
+        }
+
+        public void EnableBlockingCollider()
+        {
+            blockingCollider.enabled = true;
+        }
+
+        public void DisableBlockingCollider()
+        {
+            blockingCollider.enabled = false;
+        }
     }
 }
