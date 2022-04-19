@@ -17,7 +17,7 @@ namespace CH
         public string consumeAnimation;
         public bool isInteracting;
 
-        public virtual void AttemptToConsumeItem(PlayerAnimatorManager playerAnimatorManager)
+        public virtual void AttemptToConsumeItem(PlayerAnimatorManager playerAnimatorManager, WeaponSlotManager weaponSlotManager, PlayerEffectsManager playerEffectsManager)
         {
             if(currentItemAmount > 0)
             {

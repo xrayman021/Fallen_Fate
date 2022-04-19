@@ -2,17 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerEffectsManager : MonoBehaviour
+namespace CH
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerEffectsManager : MonoBehaviour
     {
-        
-    }
+        PlayerStats playerStats;
+        WeaponSlotManager weaponSlotManager;
+        public GameObject currentParticleFX; //Particles of current effect.
+        public GameObject instantiatedFXModel;
+        public int amountToBeHealed;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Awake()
+        {
+            playerStats = GetComponentInParent<PlayerStats>();
+            weaponSlotManager = GetComponent<WeaponSlotManager>();
+        }
+
+        public void HealPlayerFromEffect()
+        {
+            playerStats.HealPlayer(amountToBeHealed);
+            GameObject healParticles = Instantiate(currentParticleFX, playerStats.transform);
+            Destroy(instantiatedFXModel);
+            weaponSlotManager.LoadBothWeaponsOnSlot();
+        }
     }
 }

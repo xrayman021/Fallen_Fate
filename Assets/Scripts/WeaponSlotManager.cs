@@ -9,7 +9,7 @@ namespace CH
         PlayerManager playerManager;
         PlayerInventory playerInventory;
         WeaponHolderSlot leftHandSlot;
-        WeaponHolderSlot rightHandSlot;
+        public WeaponHolderSlot rightHandSlot;
         WeaponHolderSlot backSlot;
 
         public DamageCollider leftHandDamageCollider;
@@ -50,6 +50,13 @@ namespace CH
                 }
             }
         }
+
+        public void LoadBothWeaponsOnSlot()
+        {
+            LoadWeaponOnSlot(playerInventory.rightWeapon, false);
+            LoadWeaponOnSlot(playerInventory.leftWeapon, true);
+        }
+
         public void LoadWeaponOnSlot(WeaponItem weaponItem, bool isLeft)
         {
             if (isLeft)
