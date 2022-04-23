@@ -70,31 +70,37 @@ namespace CH
 
                 EnemyStats enemyStats = collision.GetComponent<EnemyStats>();
                 CharacterManager enemyCharacterManager = collision.GetComponent<CharacterManager>();
-                BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
-
-                if (enemyCharacterManager != null)
+                if (!enemyStats.isDead)
                 {
-                    if (enemyCharacterManager.isParrying)
+                    BlockingCollider shield = collision.transform.GetComponentInChildren<BlockingCollider>();
+                    
+
+                    if (enemyCharacterManager != null)
                     {
-                        Debug.Log("Enemy Parrying: " + enemyCharacterManager.isParrying);
-                        characterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Parried", true);
-                        return;
-                    }
-                    else if (shield != null && enemyCharacterManager.isBlocking)
-                    {
-                        float physicalDamageAfterBlock = currentWeaponDamage - (currentWeaponDamage * shield.blockingPhysicalDamageAbsorption) / 100;
-                        if (enemyStats != null)
+                        if (enemyCharacterManager.isParrying)
                         {
-                            enemyStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Guard");
+                            Debug.Log("Enemy Parrying: " + enemyCharacterManager.isParrying);
+                            characterManager.GetComponentInChildren<AnimatorManager>().PlayTargetAnimation("Parried", true);
                             return;
                         }
+                        else if (shield != null && enemyCharacterManager.isBlocking)
+                        {
+                            float physicalDamageAfterBlock = currentWeaponDamage - (currentWeaponDamage * shield.blockingPhysicalDamageAbsorption) / 100;
+                            if (enemyStats != null)
+                            {
+                                enemyStats.TakeDamage(Mathf.RoundToInt(physicalDamageAfterBlock), "Block Guard");
+                                return;
+                            }
+                        }
+                    }
+
+                    if (enemyStats != null)
+                    {
+                        enemyStats.TakeDamage(currentWeaponDamage);
                     }
                 }
 
-                if (enemyStats != null)
-                {
-                    enemyStats.TakeDamage(currentWeaponDamage);
-                }
+                
             }
         }
     }

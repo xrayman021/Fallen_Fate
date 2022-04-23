@@ -11,6 +11,7 @@ namespace CH
         Animator animator;
         bool enemyDead;
         CameraHandler cameraHandler;
+        CharacterManager enemyCharacterManager;
 
         public UIEnemyHealthBar enemyHealthBar;
 
@@ -20,6 +21,7 @@ namespace CH
             maxHealth = SetMaxHealthFromHealthLevel();
             enemyDead = false;
             cameraHandler = FindObjectOfType<CameraHandler>();
+            enemyCharacterManager = GetComponentInParent<CharacterManager>();
             currentHealth = maxHealth;
             enemyHealthBar.SetMaxHealth(maxHealth);
         }
@@ -42,10 +44,11 @@ namespace CH
                 isDead = true;
                 //Handle enemy death
                 enemyDead = true;
-                if (enemyDead)
+                animator.Play("Backstabbed_Death");
+                /*if (enemyDead)
                 {
                     Invoke(nameof(KillEnemy), .5f);
-                }
+                }*/
             }
         }
 
@@ -53,6 +56,7 @@ namespace CH
         {
             if (isDead)
             {
+                enemyCharacterManager.canBeBackstabbed = false;
                 return;
             }
 
@@ -70,7 +74,7 @@ namespace CH
                 enemyDead = true;
                 if(enemyDead)
                 {
-                    Invoke(nameof(KillEnemy), .5f);
+                    //Invoke(nameof(KillEnemy), .5f);
                     cameraHandler.currentLockOnTarget = null;
                 }
                 //Handle enemy death

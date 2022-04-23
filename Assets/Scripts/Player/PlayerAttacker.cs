@@ -131,12 +131,14 @@ namespace CH
 
             RaycastHit hit;
 
+            
+
             if(Physics.Raycast(inputHandler.criticalAttackRaycastStartPoint.position, 
                 transform.TransformDirection(Vector3.forward), out hit, 0.5f, backstabLayer))
             {
                 CharacterManager enemyCharacterManager = hit.transform.gameObject.GetComponentInParent<CharacterManager>();
                 DamageCollider rightWeapon = weaponSlotManager.rightHandDamageCollider;
-                if(enemyCharacterManager != null)
+                if(enemyCharacterManager != null && enemyCharacterManager.canBeBackstabbed == true)
                 {
                     Debug.Log("Made it to backstab.");
                     playerManager.transform.position = enemyCharacterManager.backstabCollider.criticalDamagerStandPosition.position;

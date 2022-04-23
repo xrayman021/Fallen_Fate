@@ -16,6 +16,7 @@ namespace CH
         [Header("Combat Flags")]
         public bool canBeRiposted;
         public bool canBeParried;
+        public bool canBeBackstabbed;
         public bool isParrying;
         public bool isBlocking;
 

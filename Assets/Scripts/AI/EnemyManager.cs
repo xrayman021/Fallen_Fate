@@ -44,6 +44,7 @@ namespace CH
             enemyStats = GetComponent<EnemyStats>();
             navMeshAgent = GetComponentInChildren<NavMeshAgent>();
             navMeshAgent.enabled = false;
+            canBeBackstabbed = true;
         }
 
         private void Start()
@@ -70,6 +71,13 @@ namespace CH
 
         private void HandleStateMachine()
         {
+            if(enemyStats.isDead)
+            {
+                SwitchToNextState(null);
+                currentTarget = null;
+                canBeBackstabbed = false;
+            }
+
             if(currentState != null)
             {
                 State nextState = currentState.Tick(this, enemyStats, enemyAnimationManager);
