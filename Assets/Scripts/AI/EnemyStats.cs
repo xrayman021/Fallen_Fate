@@ -14,8 +14,6 @@ namespace CH
 
         public UIEnemyHealthBar enemyHealthBar;
 
-
-
         void Start()
         {
             animator = GetComponentInChildren<Animator>();
@@ -36,7 +34,7 @@ namespace CH
         {
             currentHealth = currentHealth - damage;
 
-            enemyHealthBar.SetMaxHealth(currentHealth);
+            enemyHealthBar.SetHealth(currentHealth);
 
             if (currentHealth <= 0)
             {
@@ -59,7 +57,7 @@ namespace CH
             }
 
             currentHealth = currentHealth - damage;
-            enemyHealthBar.SetMaxHealth(currentHealth);
+            enemyHealthBar.SetHealth(currentHealth);
             Debug.Log("Enemy was hit");
             //healthBar.SetCurrentHealth(currentHealth);
             animator.Play(damageAnimation);

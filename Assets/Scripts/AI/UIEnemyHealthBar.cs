@@ -48,7 +48,7 @@ namespace CH
                 }
                 if (slider.value <= 0)
                 {
-                    Destroy(slider);
+                    Destroy(slider.gameObject);
                 }
             }
             
