@@ -10,7 +10,7 @@ namespace CH
         Slider slider;
         float timeUntilBarIsHidden = 0;
 
-        private void Awake()
+        private void Start()
         {
             slider = GetComponentInChildren<Slider>();
         }
@@ -29,6 +29,7 @@ namespace CH
 
         private void Update()
         {
+            transform.rotation = Camera.main.transform.rotation;
             timeUntilBarIsHidden = timeUntilBarIsHidden - Time.deltaTime;
 
             if(slider != null)
