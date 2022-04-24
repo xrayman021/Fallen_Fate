@@ -8,6 +8,7 @@ namespace CH
     {
         EnemyManager enemyManager;
         EnemyStats enemyStats;
+        EnemyAnimatorManager enemyAnimatorManager;
         private void Awake()
         {
             anim = GetComponent<Animator>();
@@ -81,6 +82,13 @@ namespace CH
         {
             enemyManager.canBeRiposted = false;
         }
+
+        /*public void BackstabDeath()
+        {
+            enemyStats.currentHealth = 0;
+            enemyStats.isDead = true;
+            anim.SetBool("isDead", true);
+        }*/
 
     }
 }

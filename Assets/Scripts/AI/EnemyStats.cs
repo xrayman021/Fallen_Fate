@@ -14,6 +14,7 @@ namespace CH
         CharacterManager enemyCharacterManager;
 
         public UIEnemyHealthBar enemyHealthBar;
+        EnemyAnimatorManager enemyAnimatorManager;
 
         void Start()
         {
@@ -24,6 +25,7 @@ namespace CH
             enemyCharacterManager = GetComponentInParent<CharacterManager>();
             currentHealth = maxHealth;
             enemyHealthBar.SetMaxHealth(maxHealth);
+            enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -41,10 +43,16 @@ namespace CH
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
+                animator.Play("Back Stabbed");
                 isDead = true;
+                enemyAnimatorManager.anim.SetBool("isDead", true);
                 //Handle enemy death
                 enemyDead = true;
-                animator.Play("Backstabbed_Death");
+                if(isDead == true)
+                {
+                    animator.Play("Backstabbed_Death");
+                }
+                
                 /*if (enemyDead)
                 {
                     Invoke(nameof(KillEnemy), .5f);
