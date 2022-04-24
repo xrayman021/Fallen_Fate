@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 21300000, guid: 1432e49ab4ffe374da69b4cefcf6e6db, type: 3}
   itemName: Knight Shield
-  modelPrefab: {fileID: 3481637875307174750, guid: c34fc746fef85c642abf041d052447eb, type: 3}
+  modelPrefab: {fileID: 1713360624702212, guid: 6e50cc5bbc220b942beffdc9c303387e, type: 3}
   isUnarmed: 0
   baseDamage: 25
   criticalDamageMultiplier: 4
-  physicalDamageAbsorption: 99
+  physicalDamageAbsorption: 70
   right_hand_idle: Right_Arm_Idle_01
   left_hand_idle: Left_Arm_Idle_01
   th_idle: TH_Idle_01
