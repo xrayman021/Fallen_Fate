@@ -23,8 +23,12 @@ namespace CH
 
         public void SetMaxHealth(int maxHealth)
         {
-            slider.maxValue = maxHealth;
-            slider.value = maxHealth;
+            if(slider != null)
+            {
+                slider.maxValue = maxHealth;
+                slider.value = maxHealth;
+            }
+            
         }
 
         private void Update()
