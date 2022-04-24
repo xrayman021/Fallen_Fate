@@ -50,7 +50,7 @@ namespace CH
                 enemyDead = true;
                 if(isDead == true)
                 {
-                    animator.Play("Backstabbed_Death");
+                    Invoke(nameof(KillEnemy), 5.0f);
                 }
                 
                 /*if (enemyDead)
@@ -91,7 +91,7 @@ namespace CH
 
         public void KillEnemy()
         {
-            Destroy(gameObject);
+            animator.Play("Backstabbed_Death");
             cameraHandler.ClearLockOnTargets();
         }
     }
