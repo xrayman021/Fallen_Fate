@@ -9,11 +9,16 @@ namespace CH
         EnemyManager enemyManager;
         EnemyStats enemyStats;
         EnemyAnimatorManager enemyAnimatorManager;
+        [SerializeField]
+        private AudioClip[] clips;
+
+        private AudioSource audioSource;
         private void Awake()
         {
             anim = GetComponent<Animator>();
             enemyManager = GetComponentInParent<EnemyManager>();
             enemyStats = GetComponentInParent<EnemyStats>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         public override void TakeCriticalDamageAnimationEvent()
@@ -81,6 +86,17 @@ namespace CH
         public void DisableCanBeRiposted()
         {
             enemyManager.canBeRiposted = false;
+        }
+
+        private void Step()
+        {
+            AudioClip clip = GetRandomClip();
+            audioSource.PlayOneShot(clip);
+        }
+
+        private AudioClip GetRandomClip()
+        {
+            return clips[UnityEngine.Random.Range(0, clips.Length)];
         }
 
         /*public void BackstabDeath()

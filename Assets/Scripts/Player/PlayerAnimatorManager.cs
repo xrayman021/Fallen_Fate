@@ -12,6 +12,12 @@ namespace CH
         PlayerLocomotion playerLocomotion;
         int vertical;
         int horizontal;
+        [SerializeField]
+        private AudioClip[] clips;
+
+        [SerializeField] private AudioClip swordStrike;
+
+        private AudioSource audioSource;
 
 
         public void Initialize()
@@ -23,6 +29,8 @@ namespace CH
             playerLocomotion = GetComponentInParent<PlayerLocomotion>();
             vertical = Animator.StringToHash("Vertical");
             horizontal = Animator.StringToHash("Horizontal");
+            audioSource = GetComponent<AudioSource>();
+            
         }
 
         public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement, bool isSprinting)
@@ -141,6 +149,22 @@ namespace CH
         {
             playerStats.TakeDamageNoAnimation(playerManager.pendingCriticalDamage);
             playerManager.pendingCriticalDamage = 0;
+        }
+
+        private void Step()
+        {
+            AudioClip clip = GetRandomClip();
+            audioSource.PlayOneShot(clip);
+        }
+
+        private AudioClip GetRandomClip()
+        {
+            return clips[UnityEngine.Random.Range(0, clips.Length)];
+        }
+
+        private void SwordStrike()
+        {
+            audioSource.PlayOneShot(swordStrike);
         }
 
         private void OnAnimatorMove()
