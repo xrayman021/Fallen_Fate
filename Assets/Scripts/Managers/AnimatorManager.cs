@@ -8,6 +8,14 @@ namespace CH
     {
         public Animator anim;
         public bool canRotate;
+        [SerializeField] private AudioClip swordStrike;
+
+        private AudioSource audioSource;
+
+        private void Start()
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
         public void PlayTargetAnimation(string targetAnim, bool isInteracting, bool canRotate = false)
         {
@@ -20,6 +28,11 @@ namespace CH
         public virtual void TakeCriticalDamageAnimationEvent()
         {
 
+        }
+
+        private void SwordStrike()
+        {
+            audioSource.PlayOneShot(swordStrike);
         }
     }
 }

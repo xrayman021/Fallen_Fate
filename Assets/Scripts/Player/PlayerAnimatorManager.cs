@@ -12,10 +12,9 @@ namespace CH
         PlayerLocomotion playerLocomotion;
         int vertical;
         int horizontal;
-        [SerializeField]
-        private AudioClip[] clips;
+        [SerializeField] private AudioClip[] clips;
 
-        [SerializeField] private AudioClip swordStrike;
+        //[SerializeField] private AudioClip swordStrike;
 
         private AudioSource audioSource;
 
@@ -162,10 +161,10 @@ namespace CH
             return clips[UnityEngine.Random.Range(0, clips.Length)];
         }
 
-        private void SwordStrike()
+        /*private void SwordStrike()
         {
             audioSource.PlayOneShot(swordStrike);
-        }
+        }*/
 
         private void OnAnimatorMove()
         {
