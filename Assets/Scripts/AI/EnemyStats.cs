@@ -15,6 +15,9 @@ namespace CH
 
         public UIEnemyHealthBar enemyHealthBar;
         EnemyAnimatorManager enemyAnimatorManager;
+        [SerializeField] private AudioClip hitSound;
+
+        private AudioSource audioSource;
 
         void Start()
         {
@@ -26,6 +29,7 @@ namespace CH
             currentHealth = maxHealth;
             enemyHealthBar.SetMaxHealth(maxHealth);
             enemyAnimatorManager = GetComponentInChildren<EnemyAnimatorManager>();
+            audioSource = GetComponent<AudioSource>();
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -67,7 +71,7 @@ namespace CH
                 enemyCharacterManager.canBeBackstabbed = false;
                 return;
             }
-
+            audioSource.PlayOneShot(hitSound);
             currentHealth = currentHealth - damage;
             enemyHealthBar.SetHealth(currentHealth);
             Debug.Log("Enemy was hit");

@@ -11,6 +11,8 @@ namespace CH
         [SerializeField] private AudioClip swordStrike;
         [SerializeField] private AudioClip heavySwordStrike;
         [SerializeField] private AudioClip hitSound;
+        [SerializeField] private AudioClip parrySound;
+        [SerializeField] private AudioClip backstabSound;
 
         private AudioSource audioSource;
 
@@ -45,6 +47,16 @@ namespace CH
         private void DamageSound()
         {
             audioSource.PlayOneShot(hitSound);
+        }
+
+        private void ParrySound()
+        {
+            audioSource.PlayOneShot(parrySound);
+        }
+
+        private void BackstabSound()
+        {
+            audioSource.PlayOneShot(backstabSound);
         }
     }
 }

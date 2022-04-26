@@ -15,6 +15,9 @@ namespace CH
 
         public float staminaRegenerationAmount = 1;
         public float staminaRegenTimer = 0;
+        [SerializeField] private AudioClip hitSound;
+
+        private AudioSource audioSource;
 
         void Start()
         {
@@ -27,6 +30,7 @@ namespace CH
             maxStamina = SetMaxStaminaFromStaminaLevel();
             currentStamina = maxStamina;
             staminaBar.SetMaxStamina(maxStamina);
+            audioSource = GetComponent<AudioSource>();
         }
 
         private int SetMaxHealthFromHealthLevel()
@@ -52,7 +56,7 @@ namespace CH
             {
                 return;
             }
-
+            audioSource.PlayOneShot(hitSound);
             currentHealth = currentHealth - damage;
             healthBar.SetCurrentHealth(currentHealth);
             animatorHandler.PlayTargetAnimation(damageAnimation, true);
