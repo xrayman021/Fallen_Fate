@@ -40964,18 +40964,18 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.651
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 249
+  Priority: 191
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -108392,6 +108392,10 @@ PrefabInstance:
       value: -0.049
       objectReference: {fileID: 0}
     - target: {fileID: 8920468206045776948, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a47d1015a2d2af54abf80b027e590798, type: 3}
+    - target: {fileID: 8920468206045776948, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: swordStrike
       value: 
       objectReference: {fileID: 8300000, guid: ae0bdd5d693723b4db183a314dcce7aa, type: 3}
@@ -108399,6 +108403,10 @@ PrefabInstance:
       propertyPath: clips.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8920468206045776948, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: heavySwordStrike
+      value: 
+      objectReference: {fileID: 8300000, guid: b3ba21357c0d6c842827e4607e7e3a0c, type: 3}
     - target: {fileID: 8920468206045776948, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
@@ -108530,9 +108538,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4141180351700218126, guid: 603828db4d425ac42928e2f4f9dbd9ee, type: 3}
+      propertyPath: heavySwordStrike
+      value: 
+      objectReference: {fileID: 8300000, guid: b3ba21357c0d6c842827e4607e7e3a0c, type: 3}
+    - target: {fileID: 4141180351700218126, guid: 603828db4d425ac42928e2f4f9dbd9ee, type: 3}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 231cdc7413e0b6543b662413810f4b01, type: 3}
+      objectReference: {fileID: 8300000, guid: 4b046ce6ced46be41a8036696f315baf, type: 3}
     - target: {fileID: 4141180351700218126, guid: 603828db4d425ac42928e2f4f9dbd9ee, type: 3}
       propertyPath: clips.Array.data[1]
       value: 

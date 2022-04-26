@@ -9,6 +9,8 @@ namespace CH
         public Animator anim;
         public bool canRotate;
         [SerializeField] private AudioClip swordStrike;
+        [SerializeField] private AudioClip heavySwordStrike;
+        [SerializeField] private AudioClip hitSound;
 
         private AudioSource audioSource;
 
@@ -33,6 +35,16 @@ namespace CH
         private void SwordStrike()
         {
             audioSource.PlayOneShot(swordStrike);
+        }
+
+        private void HeavySwordStrike()
+        {
+            audioSource.PlayOneShot(heavySwordStrike);
+        }
+
+        private void DamageSound()
+        {
+            audioSource.PlayOneShot(hitSound);
         }
     }
 }

@@ -9,8 +9,7 @@ namespace CH
         EnemyManager enemyManager;
         EnemyStats enemyStats;
         EnemyAnimatorManager enemyAnimatorManager;
-        [SerializeField]
-        private AudioClip[] clips;
+        public AudioClip[] clips;
 
         private AudioSource audioSource;
         private void Awake()
