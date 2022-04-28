@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,14 +5,16 @@ namespace CH
 {
     public class GameManager : MonoBehaviour
     {
-        PlayerStats playerStats;
+        public PlayerStats playerStats;
+        public SceneLoader sceneLoader;
         [SerializeField] AudioClip backgroundTrack;
         private AudioSource Audio;
 
         // Start is called before the first frame update
         void Start()
         {
-            playerStats = GetComponent<PlayerStats>();
+            //playerStats = GetComponent<PlayerStats>();
+            //sceneLoader = FindObjectOfType<SceneLoader>();
             Audio = GetComponent<AudioSource>();
             Audio.clip = backgroundTrack;
             Audio.loop = true;
@@ -26,13 +26,14 @@ namespace CH
         {
             if(playerStats.isDead)
             {
-                
+                GameOver();
             }
         }
 
         private void GameOver()
         {
-
+            sceneLoader.ReloadLevel();
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
