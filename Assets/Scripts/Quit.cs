@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Quit : MonoBehaviour
+namespace CH
 {
-    public void doquit()
+    public class Quit : MonoBehaviour
     {
-        Debug.Log("Has quit game.");
-        Application.Quit();
+        public void doquit()
+        {
+            Debug.Log("Has quit game.");
+            Application.Quit();
+        }
     }
 }
