@@ -127,7 +127,10 @@ namespace CH
         private void LoadRighttWeaponDamageCollider()
         {
             rightHandDamageCollider = rightHandSlot.currentWeaponModel.GetComponentInChildren<DamageCollider>();
-            rightHandDamageCollider.currentWeaponDamage = playerInventory.rightWeapon.baseDamage;
+            if (rightHandDamageCollider != null)
+            {
+                rightHandDamageCollider.currentWeaponDamage = playerInventory.rightWeapon.baseDamage;
+            }   
         }
 
         public void OpenDamageCollider()

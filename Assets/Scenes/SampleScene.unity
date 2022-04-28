@@ -59670,7 +59670,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.682
   m_Pitch: 1
   Loop: 0
@@ -108501,6 +108501,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: a47d1015a2d2af54abf80b027e590798, type: 3}
     - target: {fileID: 8920468206045776948, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
+      propertyPath: rollSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d08637841d386d42af88e7044b02065, type: 3}
+    - target: {fileID: 8920468206045776948, guid: 906a41be87bfbe04a87a612a4a30281e, type: 3}
       propertyPath: parrySound
       value: 
       objectReference: {fileID: 8300000, guid: a47d1015a2d2af54abf80b027e590798, type: 3}
@@ -108747,6 +108751,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4141180351700218126, guid: 603828db4d425ac42928e2f4f9dbd9ee, type: 3}
+      propertyPath: parrySound
+      value: 
+      objectReference: {fileID: 8300000, guid: a47d1015a2d2af54abf80b027e590798, type: 3}
     - target: {fileID: 4141180351700218126, guid: 603828db4d425ac42928e2f4f9dbd9ee, type: 3}
       propertyPath: swordStrike
       value: 

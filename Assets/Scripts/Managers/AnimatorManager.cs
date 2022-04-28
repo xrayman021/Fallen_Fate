@@ -13,6 +13,7 @@ namespace CH
         [SerializeField] private AudioClip hitSound;
         [SerializeField] private AudioClip parrySound;
         [SerializeField] private AudioClip backstabSound;
+        [SerializeField] private AudioClip rollSound;
 
         private AudioSource audioSource;
 
@@ -57,6 +58,11 @@ namespace CH
         private void BackstabSound()
         {
             audioSource.PlayOneShot(backstabSound);
+        }
+
+        private void RollSound()
+        {
+            audioSource.PlayOneShot(rollSound);
         }
     }
 }
