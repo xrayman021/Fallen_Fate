@@ -24,6 +24,14 @@ namespace CH
         // Update is called once per frame
         void Update()
         {
+            if(playerStats.isDead)
+            {
+                
+            }
+        }
+
+        private void GameOver()
+        {
 
         }
     }
