@@ -256,6 +256,10 @@ namespace CH
                         animatorHandler.PlayTargetAnimation("Land", true);
                         inAirTimer = 0;
                     }
+                    else if(inAirTimer > 3.0f)
+                    {
+                        playerStats.isDead = true;
+                    }
                     else
                     {
                         animatorHandler.PlayTargetAnimation("Empty", false);
@@ -315,6 +319,14 @@ namespace CH
                     Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
                     myTransform.rotation = jumpRotation;
                 }
+            }
+        }
+
+        private void Update()
+        {
+            if(transform.position.y <= -5)
+            {
+                playerStats.isDead = true;
             }
         }
 

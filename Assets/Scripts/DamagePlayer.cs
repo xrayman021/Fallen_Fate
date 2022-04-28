@@ -14,7 +14,7 @@ namespace CH
 
             if(playerStats != null)
             {
-                playerStats.TakeDamage(damage);
+                playerStats.TakeDamageNoAnimation(damage);
             }
         }
     }

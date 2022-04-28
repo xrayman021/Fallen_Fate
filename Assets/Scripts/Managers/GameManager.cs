@@ -30,7 +30,7 @@ namespace CH
             }
         }
 
-        private void GameOver()
+        public void GameOver()
         {
             sceneLoader.ReloadLevel();
             SceneManager.LoadScene("MainMenu");

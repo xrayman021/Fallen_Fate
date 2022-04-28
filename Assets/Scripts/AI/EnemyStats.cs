@@ -15,7 +15,8 @@ namespace CH
 
         public UIEnemyHealthBar enemyHealthBar;
         EnemyAnimatorManager enemyAnimatorManager;
-        [SerializeField] private AudioClip hitSound;
+        public AudioClip hitSound;
+        public AudioClip deathSound;
 
         private AudioSource audioSource;
 
@@ -95,6 +96,7 @@ namespace CH
 
         public void KillEnemy()
         {
+            audioSource.PlayOneShot(deathSound);
             animator.Play("Backstabbed_Death");
             cameraHandler.ClearLockOnTargets();
         }
