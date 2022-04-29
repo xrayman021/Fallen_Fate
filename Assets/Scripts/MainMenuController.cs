@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] AudioClip _startingSong;
+    [SerializeField] AudioClip menuTrack;
+    private AudioSource Audio;
     void Start()
     {
-        if (_startingSong != null)
-        {
-            AudioHelper.PlayClip2D(_startingSong, 1f);
-        }
+        Audio = GetComponent<AudioSource>();
+        Audio.clip = menuTrack;
+        Audio.loop = true;
+        Audio.Play();
     }
 
 
