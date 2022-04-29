@@ -14,6 +14,7 @@ namespace CH
         [SerializeField] private AudioClip parrySound;
         [SerializeField] private AudioClip backstabSound;
         [SerializeField] private AudioClip rollSound;
+        [SerializeField] private AudioClip drinkSound;
 
         private AudioSource audioSource;
 
@@ -63,6 +64,11 @@ namespace CH
         private void RollSound()
         {
             audioSource.PlayOneShot(rollSound);
+        }
+
+        private void DrinkSound()
+        {
+            audioSource.PlayOneShot(drinkSound);
         }
     }
 }
